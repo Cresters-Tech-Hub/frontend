@@ -1,0 +1,33 @@
+@mixin centerItemsLoader($direction, $top) {
+    display: flex;
+    place-items: center;
+    position: absolute;
+    gap: 1rem;
+    flex-direction: $direction;
+    top: $top;
+    left: 45%;
+}
+
+@mixin centerItems($direction) {
+    display: flex;
+    place-items: center;
+    gap: 1rem;
+    flex-direction: $direction;
+}
+@mixin flex($row){
+        display: flex;
+        flex-direction: $row;
+        align-items: center;
+}
+@mixin centerItemWithoutGap($direction) {
+        display: flex;
+        flex-direction: $direction;
+        justify-content: space-around;
+        align-items: center;
+}
+@mixin center($direction){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}

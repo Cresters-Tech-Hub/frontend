@@ -1,0 +1,14 @@
+@import '../../../assets/css/partials/functions';
+@import '../../../assets/css/partials/break_points';
+
+.splashScreen{
+ width: 100%;
+ overflow: hidden;
+ .splash_item{
+   margin-top: 4%;
+   @include centerItemWithoutGap(row);
+ }
+ .carousel_dot_class{
+  font-size: 50px;
+ }
+}

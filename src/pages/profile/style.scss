@@ -1,0 +1,38 @@
+@import '../../assets/css/partials/break_points';
+@import '../../assets/css/partials/functions';
+@import '../../assets/css/partials/colors';
+.user_profile{
+
+    .profileLogo{
+        padding: 20px 0;
+       margin-left: 20px;
+       margin-right: 20px;
+        font-family: Urbanist, sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 32px;
+        letter-spacing: 0.005em;
+        background: linear-gradient(286.17deg, #06C149 0%, #33EB75 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+}
+/*
+@include mobile(768px){
+    .user_profile{
+      
+    }
+}
+*/

@@ -1,0 +1,54 @@
+@import '../../../assets/css/partials/functions';
+@import '../../../assets/css/partials/break_points.scss';
+
+.landing_page{
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.landing_items_center{
+  @include centerItemsLoader(column, 30%);
+  max-width: 100%;
+}
+.crester_logo{
+width: 121px;
+height: 48px;
+font-family: Urbanist, sans-serif;;
+font-style: normal;
+font-weight: 800;
+font-size: 32px;
+line-height: 48px;
+/* identical to box height, or 150% */
+letter-spacing: 0.005em;
+/* Primary Gradient */
+background: linear-gradient(286.17deg, #06C149 0%, #33EB75 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+@include extraLargeScreen(1281px, 3000px){
+    .landing_items_center{
+        left: 48%;
+        top: 20%;
+      }
+}
+@include desktop(1025px, 1280px){
+    .landing_items_center{
+        left: 47%;
+        top: 20%;
+      }
+}
+@include tablet(1024px){
+    .landing_items_center{
+        left: 45%;
+        top: 20%;
+      }
+}
+@include mobile(450px){
+    .landing_items_center{
+        left: 40%;
+      }
+}
+

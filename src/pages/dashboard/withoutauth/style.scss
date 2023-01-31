@@ -1,0 +1,69 @@
+@import "../../../assets/css/partials/break_points";
+@import "../../../assets/css/partials/functions";
+
+.without_auth_dashboard {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    .container {
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 15rem auto 20rem;
+        overflow: hidden;
+        .left {
+            overflow: hidden;
+        }
+        .main {
+            overflow: hidden;
+        }
+        .right {
+            overflow: hidden;
+        }
+    }
+}
+
+@include desktop(920px, 1279px) {
+    .without_auth_dashboard {
+        .container {
+            grid-template-columns: 11rem auto 15rem;
+        }
+    }
+}
+@include mobile(820px) {
+    .without_auth_dashboard {
+        .container {
+            width: 100%;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 100%;
+            overflow: hidden;
+            .left {
+                display: none;
+            }
+            .left.isMobileMenuLeft {
+                display: block;
+                position: absolute;
+                left: 0;
+                height: 100vh;
+                background: rgb(256, 256, 256);
+                z-index: 99;
+                padding: 10px 20px 10px 10px;
+                box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            }
+
+            .main {
+                overflow: hidden;
+            }
+            .right {
+                display: none;
+            }
+            .right.isMobileMenuRight {
+                display: none;
+            }
+        }
+    }
+}

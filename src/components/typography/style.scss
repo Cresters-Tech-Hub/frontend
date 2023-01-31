@@ -1,0 +1,17 @@
+@import '../../assets/css/partials/typography';
+
+.typography_default{
+    @include typography;
+}
+.typography_h2{
+    @include typography;
+    font-weight: 700;
+    font-size: 24px;
+    color: #111111;
+}
+.typography_p{
+    @include typography;
+    font-weight: 400;
+    font-size: 14px;
+    color: #78828A;
+}

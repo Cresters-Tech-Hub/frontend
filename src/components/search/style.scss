@@ -1,0 +1,35 @@
+@import "../../assets/css/partials/break_points";
+@import "../../assets/css/partials/functions";
+
+.top_bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    .location {
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    .search {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        input {
+            width: 50%;
+            padding: 20px;
+            border-radius: 25px;
+            border: 1px solid #eee;
+        }
+        input:focus {
+            outline: 1px solid #33eb75;
+        }
+        img {
+            position: absolute;
+            right: 27%;
+        }
+    }
+}

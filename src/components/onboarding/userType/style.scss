@@ -1,0 +1,57 @@
+@import '../../../assets/css/partials/functions';
+.userType_username {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    margin-bottom: 10px;
+    
+    input{
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #E4E7F1;
+        border-radius: 24px;
+       padding: 16px 32px;
+    }
+    .inputError{
+        border-color: red;
+    }
+
+    input:focus {
+        outline: navy;
+      }
+  img{
+    position: absolute;
+    left: 10px;
+   }
+ i {
+    position: absolute;
+    right: 20px;
+ }
+}
+.error_span{
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    font-style: italic
+}
+.forgot_pwd{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.userType_username_checkbox{
+    @include center(row);
+    gap: 1rem;
+    p{
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.01em;
+    /* Grey 600 */
+    color: #616161;
+    }
+}

@@ -1,0 +1,143 @@
+@import '../../assets/css/partials/break_points';
+@import '../../assets/css/partials/functions';
+
+
+.notes_review{
+    @include flex(column);
+    justify-content: center;
+    position: relative;
+    height: 80vh;
+    .container{   
+        @include flex(column); 
+        margin-top: auto;
+        margin-bottom: auto;
+        position: absolute;
+        top: 20%;
+        transform: translate(50%,50%);
+        right: 50%;
+        .notes_text{
+            margin-top: 3rem;
+            font-family: Nunito, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+            color: #333333;
+            width: 70%;
+        }
+    }
+}
+
+.documents{
+    .main_title{
+        margin-top: 5rem;
+        .title{
+            height: 25px;
+            font-family: Nunito, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 25px;
+            color: #333333;
+        }
+        .subtitle{
+            margin-top: 10px;
+            font-family: Plus Jakarta Sans, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 135%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #9E9E9E;
+        }
+    }
+    .upload_documents_container{
+        margin-top: 3rem;
+        padding-left: 25px;
+    }
+    .upload_width{
+        width: 45%;
+
+    }
+}
+
+@include mobile(768px) {
+    .notes_review{
+        height: 90vh;
+        width: 100%;
+        .container{   
+            top: 10%;
+            width: 100%;
+            .notes_text{
+                width: 100%;
+            }
+        }
+    }
+    
+    .documents{
+        .upload_width{
+            width: 100%
+        }
+    }
+}
+
+@include extraLargeScreen(769px, 1024px) {
+    .notes_review{
+        height: 90vh;
+        width: 100%;
+        .container{   
+            top: 10%;
+            width: 100%;
+            .notes_text{
+                width: 70%;
+            }
+        }
+    }
+    
+    .documents{
+        .upload_width{
+            width: 50%
+        }
+    }
+}
+@include extraLargeScreen(1025px, 1280px) {
+    .notes_review{
+        height: 90vh;
+        width: 100%;
+        .container{   
+            top: 10%;
+            width: 100%;
+            .notes_text{
+                width: 60%;
+            }
+        }
+    }
+    
+    .documents{
+        .upload_width{
+            width: 40%
+        }
+    }
+}
+
+@include extraLargeScreen(1281px, 3000px) {
+    .notes_review{
+        height: 80vh;
+        .container{   
+            top: 20%;
+            .notes_text{
+                width: 70%;
+            }
+        }
+    }
+    
+
+    .documents{
+        .upload_width{
+            width: 30%
+        }
+    }
+}
