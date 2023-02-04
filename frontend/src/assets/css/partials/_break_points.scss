@@ -1,0 +1,27 @@
+@mixin mobile($bp) {
+    @media (max-width: $bp) {
+        @content;
+    }
+}
+@mixin min_mobile($bp) {
+    @media (min-width: $bp) {
+        @content;
+    }
+}
+
+@mixin tablet($bp) {
+    @media (max-width: $bp) {
+        @content;
+    }
+}
+
+@mixin desktop($bp1, $bp2) {
+    @media (min-width: $bp1) and (max-width: $bp2) {
+        @content;
+    }
+}
+@mixin extraLargeScreen($bp1, $bp2) {
+    @media (min-width: $bp1) and (max-width: $bp2) {
+        @content;
+    }
+}

@@ -1,0 +1,10 @@
+
+@mixin typography{
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-style: normal;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+}

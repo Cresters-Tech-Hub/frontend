@@ -1,0 +1,74 @@
+@import '../../assets/css/partials/break_points';
+@import '../../assets/css/partials/functions';
+
+.form{
+    .form_username{
+       @include flex(row);
+        position: relative;
+        input{
+            width: 35%;
+            background: #FFFFFF;
+            border: 1px solid #E4E7F1;
+            border-radius: 24px;
+           padding: 16px 32px;
+        }
+        input::placeholder {
+            margin-left: 10px;
+          }
+          input:focus {
+            outline: 1px solid #3784FB;
+          }
+      img{
+        position: absolute;
+        left: 10px;
+       }
+       i {
+        position: absolute;
+        left: 20%;
+     }
+    }
+    .helperErrorText{
+        margin-left: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        font-style: italic
+    }
+}
+.form{
+    .form_username.error{
+        input{
+            outline: 1px solid red;
+        }
+    }
+}
+@include mobile(768px){
+    .form{
+        .form_username{
+            input{
+                width: 95%;
+            }
+        
+        }
+    }
+}
+@include mobile(420px){
+    .form{
+        .form_username{
+            input{
+                width: 100%;
+            }
+        
+        }
+    }
+}
+@include mobile(1024px){
+    .form{
+        .form_username{
+            input{
+                width: 55%;
+            }
+
+        }
+    }
+}

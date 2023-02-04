@@ -1,0 +1,29 @@
+@import '../../assets//css/partials/break_points';
+@import '../../assets//css/partials/functions';
+
+.personal_deatils{
+    .avatar{
+        @include flex(row);
+        gap: 4rem;
+        margin-top: 25px;
+    }
+    button {
+        width: 25%;
+        margin-top: 40px;
+    }
+}
+
+@include mobile(768px){
+    .personal_deatils{
+        button {
+            width: 92%;
+        }
+    }
+}
+@include mobile(1024px){
+    .personal_deatils{
+        button {
+            width: 72%;
+        }
+    }
+}

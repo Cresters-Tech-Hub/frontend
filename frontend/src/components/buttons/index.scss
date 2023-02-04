@@ -1,0 +1,89 @@
+@import "../../assets/css/partials/buttons";
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-moz-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.button_default {
+    @include buttons;
+    width: 150px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    img {
+        width: 17.65px;
+        height: 17.65px;
+        animation: spin 1s ease-in-out infinite;
+        -webkit-animation: spin 1s linear infinite;
+        -moz-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+    }
+}
+
+.button_md {
+    @include buttons;
+    font-size: 21px;
+    width: 250px;
+    height: 56px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    img {
+        width: 17.65px;
+        height: 17.65px;
+        display: block;
+        position: fixed;
+        -webkit-animation: spin 1s linear infinite;
+        -moz-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+    }
+}
+
+.button_lg {
+    @include buttons;
+    font-size: 23px;
+    width: 300px;
+    height: 56px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    img {
+        width: 17.65px;
+        height: 17.65px;
+    }
+}
+.button_error {
+    color: #666666;
+    background: #cccccc;
+}
+.button_white {
+    font-size: 21px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: #fafafa;
+    border: 1px solid #06c149;
+    color: #06c149;
+}
