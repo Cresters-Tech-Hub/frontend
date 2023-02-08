@@ -30,6 +30,11 @@
         flex-direction: row;
         gap: 1rem;
         align-items: center;
+        .user_details_right{
+           .role{
+            font-size: 12px;
+           }
+        }
     }
     .rightSidebar_container {
         font-family: Nunito, sans-serif;

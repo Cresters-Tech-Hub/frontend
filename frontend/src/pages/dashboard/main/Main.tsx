@@ -16,7 +16,7 @@ interface IMain {
 
 const Main = ({ component, isUserDashboard }: IMain) => {
     const {
-        data: { name, location }
+        data: { name, location, path }
     } = useSelector((state: RootState) => state.user);
     const [status, setMobileStatus] = useState(false);
     const dispatch = useDispatch();

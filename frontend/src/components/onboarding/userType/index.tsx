@@ -88,7 +88,8 @@ export default function UserTypeRegistration({ userType, isLoginPage }: UserType
                         name: user.firstName,
                         firstName: user.lastName,
                         location: user.location,
-                        role: user.role
+                        role: user.role,
+                        path:user.path
                     })
                 );
                 navigate("/dashboard");

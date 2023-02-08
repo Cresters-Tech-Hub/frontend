@@ -27,7 +27,7 @@ const Sidebar = ({ menuData }: ISidebar) => {
     const mobileMenuStatus = useSelector((state: RootState) => state.mobileMenuStatus.status);
     const data = useSelector((state: RootState) => state.user.data);
     const {
-        data: { name, role }
+        data: { name, path }
     } = useSelector((state: RootState) => state.user);
     const [index, setIndex] = useState<number | undefined>(1);
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -47,7 +47,7 @@ const Sidebar = ({ menuData }: ISidebar) => {
     const sidebarAction = (id: number, itemName: string) => {
         setIndex(id);
 
-        if (itemName === "Profile") navigate(`/${role?.toLowerCase()}`);
+        if (itemName === "Profile") navigate(`/${path}`);
     };
 
     const sidebarMenuTop = name ? menuData : menu;

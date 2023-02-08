@@ -54,7 +54,7 @@ export default function TableFilter() {
                 <div className="middle">
                     <div className="searchBox">
                         <input type="search" placeholder="Search" />
-                        <img src={search} alt="" />
+                        <img src={search} alt="" className="searchIcon"/>
                     </div>
                 </div>
                 <div className="right">

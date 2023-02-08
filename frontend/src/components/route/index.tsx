@@ -93,7 +93,7 @@ export const AppRoutes = () => {
                 <Route
                     path="rider"
                     element={
-                        name && role?.toLowerCase() === "rider" ? (
+                        name && role?.toLowerCase() === "delivery agent" ? (
                             <WithoutAuthDashBoard
                                 rightbar={
                                     <RightSidebar
@@ -103,7 +103,7 @@ export const AppRoutes = () => {
                                     />
                                 }
                                 main={
-                                    <Main component={<RiderDashboard />} isUserDashboard={true} />
+                                    <Main component={<RiderDashboard />} isUserDashboard={false} />
                                 }
                                 sidebar={<Sidebar menuData={riderMenu} />}
                             />

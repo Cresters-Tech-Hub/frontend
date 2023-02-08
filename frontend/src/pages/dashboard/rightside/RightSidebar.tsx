@@ -46,7 +46,7 @@ const RightSidebar = ({ component }: IRightSidebar) => {
                     </div>
                     <div className="user_details_right">
                         <div>{name}</div>
-                        <div>{role}</div>
+                        <div className="role">{role}</div>
                     </div>
                     <div>
                         <BiCaretDownCircle color="rgba(92, 92, 92, 1)" fontSize="24px" />

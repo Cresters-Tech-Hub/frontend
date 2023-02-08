@@ -6,7 +6,8 @@ export const projects = [
         location: "Benin, Edo",
         email: "davidalimazo@cresters.com",
         password: "Cresters56@",
-        role: "VENDOR"
+        role: "VENDOR",
+        path:"vendor"
     },
     {
         id: 1,
@@ -15,7 +16,8 @@ export const projects = [
         location: "Akure, Ondo",
         email: "shola231@gmail.com",
         password: "Shola12k#",
-        role: "DELIVERY AGENT"
+        role: "DELIVERY AGENT",
+        path:"rider"
     },
     {
         id: 2,
@@ -24,6 +26,7 @@ export const projects = [
         location: "Ota, Ogun",
         email: "bukola123@gmail.com",
         password: "BukiOy12k#",
-        role: "USER"
+        role: "USER",
+        path:"user"
     }
 ];
