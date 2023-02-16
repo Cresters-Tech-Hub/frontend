@@ -23,6 +23,19 @@
                 align-items: center;
                 justify-content: center;
                 gap: 2rem;
+                .rider_has_accepted {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 0.5rem;
+                    span {
+                        font-family: Nunito, sans-serif;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 14px;
+                        color: #111827;
+                    }
+                }
                 .left {
                     font-family: Nunito, sans-serif;
                     font-style: normal;
@@ -124,7 +137,7 @@
                                 .size {
                                     background: #eeeeee;
                                     border-radius: 9.18946px;
-                                    color: #35383F;
+                                    color: #35383f;
                                     padding: 8px;
                                     font-size: 11.59285px;
                                 }
@@ -147,25 +160,39 @@
                             .tr_with_img {
                                 text-align: center;
                             }
-                            .style_td > span:first-of-type{
+                            .style_td > span:first-of-type {
                                 font-family: Nunito, sans-serif;
                                 font-style: normal;
                                 font-weight: 700;
                                 font-size: 13px;
-                                color: #35383F;
+                                color: #35383f;
                                 margin-right: 0.5rem;
                             }
-                            .style_td > span:last-of-type{
+                            .style_td > span:last-of-type {
                                 font-family: Nunito, sans-serif;
                                 font-style: normal;
                                 font-weight: 400;
                                 font-size: 12px;
-                                color: #35383F;
+                                color: #35383f;
                             }
                         }
                         .last_tr {
                             td {
                                 padding-top: 30px;
+                                .rider_non_schedule {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    gap: 0.5rem;
+                                    span {
+                                        font-family: Nunito, sans-serif;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 13px;
+                                        line-height: 16px;
+                                        color: #9ca3af;
+                                    }
+                                }
                             }
                             .time_td {
                                 display: flex;

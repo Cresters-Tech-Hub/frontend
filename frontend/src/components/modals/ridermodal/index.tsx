@@ -6,6 +6,9 @@ import Button from "../../buttons";
 import { incomingOrderData } from "../../../assets/JsonData/constants";
 import AcceptModal from '../rideracceptmodal/index';
 import AcceptOrRejectModal from "../declineoracceptmodal";
+import { useDispatch } from 'react-redux';
+import { setCountDownTimer } from "../../../reducer/countDownReducer";
+
 
 interface IRiderModalProps {
     open: boolean;
@@ -14,11 +17,15 @@ interface IRiderModalProps {
 }
 
 export default function RiderDashboardModal({ open, onClose, onClick }: IRiderModalProps) {
+   
     const [openModal, setOpenModal] = useState(false)
     const closeModal = ()=>setOpenModal(false)
     const [dataSet, setDataSet]= useState({start:1, next:3})
-const [successOpen, setsuccessOpen] = useState(false)
-  const [isTurnedOn, setIsTurnedOn] = useState(true);
+    const [successOpen, setsuccessOpen] = useState(false)
+    const [isTurnedOn, setIsTurnedOn] = useState(true);
+
+    const dispatch = useDispatch()
+
     const onIsTurnONChange = (checked:boolean) => {
         setIsTurnedOn(checked);
         if (!checked) {
@@ -26,6 +33,7 @@ const [successOpen, setsuccessOpen] = useState(false)
         }
       };
       const handleSucessModal=()=>{
+        dispatch(setCountDownTimer(true))
         setsuccessOpen(true)
         if(successOpen) {
           onClick && onClick()
@@ -135,9 +143,9 @@ const [successOpen, setsuccessOpen] = useState(false)
                     </div>
                 </div>
                {
-                !openModal && <AcceptModal setAccept={()=>setOpenModal(true)} title="Success" text="Please note: You have a time frame of 10 minutes to decline this offer incase you are no longer available. Once this time elapse, you will be unable to decline this offer anymore!" open={successOpen} onClose={handleClose} onClick={handleClose} subTitle="Delivery Request offer has been accepted!"/>
+                !openModal && <AcceptModal setAccept={()=>{setOpenModal(true); dispatch(setCountDownTimer(true))}} title="Success" text="Please note: You have a time frame of 10 minutes to decline this offer incase you are no longer available. Once this time elapse, you will be unable to decline this offer anymore!" open={successOpen} onClose={handleClose} onClick={handleClose} subTitle="Delivery Request offer has been accepted!"/>
                } 
-               <AcceptOrRejectModal open={openModal} onClose={closeModal}/>
+               <AcceptOrRejectModal open={openModal} onClose={closeModal} onClick={closeModal}/>
             </div>
            
         </Modal>

@@ -4,6 +4,7 @@ import cardReducer from "../reducer/cardReducer";
 import mobileMenuReducer from "../reducer/mobileMenuReducer";
 import userReducer from "../reducer/userReducer";
 import rightSidebarReducer from "../reducer/rightSidebarReducer";
+import countDownTimerReducer from "../reducer/countDownReducer";
 
 export const store = configureStore({
     reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
         cardIndex: cardReducer,
         mobileMenuStatus: mobileMenuReducer,
         user: userReducer,
-        rightSidebarReducer: rightSidebarReducer
+        rightSidebarReducer: rightSidebarReducer,
+        CountDownTimer:countDownTimerReducer
     }
 });
 
