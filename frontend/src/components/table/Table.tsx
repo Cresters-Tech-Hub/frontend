@@ -9,25 +9,17 @@ import type { ColumnDef } from "@tanstack/react-table";
 import "./appTable.scss";
 import { useState, useMemo } from "react";
 import TableFilter from "../tableFilter/TableFilter";
+import { filterItemsArray, selectOptions } from "../../assets/JsonData/constants";
 
 export interface ReactTableProps<T extends object> {
     data: T[];
     columns: ColumnDef<T>[];
-}
-interface ITemName {
-    image: string;
-    details: { title: string; rating: number };
-}
-export interface IData {
-    itemName: ITemName;
-    description: string;
-    properties: string;
-    price: string;
-    inventory: number;
-    discount: number;
+    tablefilter:React.ReactNode
 }
 
-export const Table = <T extends object>({ data, columns }: ReactTableProps<T>) => {
+
+
+export const Table = <T extends object>({ data, columns, tablefilter }: ReactTableProps<T>) => {
     const [{ pageIndex, pageSize }, setPagination] = useState<PaginationState>({
         pageIndex: 0,
         pageSize: 10
@@ -60,7 +52,7 @@ export const Table = <T extends object>({ data, columns }: ReactTableProps<T>) =
     };
     return (
         <div className="table">
-            <TableFilter/>
+           {tablefilter}
             <table>
                 <div className="table_container">
                     <thead className="table_header">

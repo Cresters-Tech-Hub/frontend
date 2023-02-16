@@ -7,10 +7,10 @@ import table_img from "../../../assets/images/table_img.png";
 import { vendorContact, vendorTotals } from "../../../assets/JsonData/profile";
 import Chart from "react-apexcharts";
 import Metrics from "../../../components/metrics/Metrics";
-import { IData, Table } from "../../../components/table/Table";
-import { useMemo } from "react";
-import { ColumnDef } from "@tanstack/react-table";
+import {Table } from "../../../components/table/Table";
 import { useTableColumns } from "../../../assets/JsonData/columns";
+import TableFilter from '../../../components/tableFilter/TableFilter';
+import { filterItemsArray, selectOptions } from '../../../assets/JsonData/constants';
 
 export default function VendorDashboard() {
     const COLUMNS = useTableColumns();
@@ -166,7 +166,7 @@ export default function VendorDashboard() {
                     </div>
                 </div>
             </div>
-            <Table data={dummyData} columns={COLUMNS} />
+            <Table data={dummyData} columns={COLUMNS} tablefilter={<TableFilter filterItemsArray={filterItemsArray} selectOptions={selectOptions} isRider={false}/>}/>
         </div>
     );
 }

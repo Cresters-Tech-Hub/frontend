@@ -39,3 +39,8 @@ export const vendorTotals = [
     { id: 2, value: "546", icon: uploaded, title: "Total Items Uploaded" },
     { id: 3, value: "4.5 stars", icon: rating, title: "Customers Rating" }
 ];
+export const riderMetrics = [
+    { id: 0, value: "325", icon: orders, title: "Total delivery trip Completed" },
+    { id: 1, value: "1 Month", icon: uploaded, title: "Member Since" },
+    { id: 2, value: "4.5 stars", icon: rating, title: "Customers Rating" }
+];

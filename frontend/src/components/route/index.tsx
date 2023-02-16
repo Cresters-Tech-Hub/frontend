@@ -19,10 +19,10 @@ import { RootState } from "../../store/index";
 import { PromotionAndFeatures } from "../../pages/dashboard/rightside/PromotionAndFeatures";
 import { MainDashboard } from "../../pages/dashboard/main/MainDashboard";
 import { authMenu, riderMenu, userMenu } from "../../assets/JsonData/menu";
-import { UserDashboad } from "../../pages/dashboard/main/UserDashboad";
 import RiderDashboard from "../../pages/dashboard/main/RiderDashboard";
 import VendorDashboard from "../../pages/dashboard/main/VendorDashboard";
 import VendorRightSidebar from "../../pages/dashboard/rightside/VendorRightSidebar";
+import RiderRightsidebar from "../../pages/dashboard/rightside/RiderRightsidebar";
 
 const { home } = APPNAVIGATIONROUTES;
 
@@ -98,7 +98,7 @@ export const AppRoutes = () => {
                                 rightbar={
                                     <RightSidebar
                                         component={
-                                            <PromotionAndFeatures type={type} index={index} />
+                                            <RiderRightsidebar />
                                         }
                                     />
                                 }

@@ -1,46 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import "./riderdasboard.scss";
 import riderImg from "../../../assets/images/riderimg.png";
 import verified from "../../../assets/images/verified.png";
-import calender from "../../../assets/images/calendar.png";
-import message from "../../../assets/images/message.png";
-import phone from "../../../assets/images/call.png";
-import location from "../../../assets/images/location2.png";
+import { riderMetrics } from "../../../assets/JsonData/profile";
+import { Table } from "../../../components/table/Table";
+import { riderDummyData, riderFilterItemsArray, riderInfoData } from '../../../assets/JsonData/constants';
+import TableFilter from "../../../components/tableFilter/TableFilter";
+import { useRiderTableColumns } from './../../../assets/JsonData/columns';
+import RiderDashboardModal from "../../../components/modals/ridermodal";
+
 
 const RiderDashboard = () => {
-    const dummyData = [
-        {
-            id: 0,
-            image:  calender ,
-            itemName: "Date joined",
-            value: "13th December, 2022"
-        },
-        {
-            id: 1,
-            image:  message ,
-            itemName: "Email Address",
-            value: "martinsadetola@gmail.com"
-        },
-        {
-            id: 2,
-            image:  phone ,
-            itemName: "Phone Number",
-            value: "09028990000"
-        },
-        {
-            id: 3,
-            image:  location ,
-            itemName: "Location",
-            value: "Off Shangisha street, Mago...os"
-        }
-    ];
+    const COLUMNS = useRiderTableColumns();
+
     const serviceInfoData = [
         {id:0, title:"Vehicle Type", value:"Car / Truck"},
         {id:1, title:"Vehicle Model", value:"Toyota Corolla"},
         {id:2, title:"Vehicle Color", value:"Blue"},
         {id:3, title:"Vehicle Plate Number", value:"098TYUUH / 098TYUUH"},
-        {id:4, title:"Work Hours", value:"7pm - 11:45pm"},
+        {id:4, title:"Work Hours", value:"7am - 11:45pm"},
     ]
+
+    const [open, setOpen] = useState(false);
+    const handleClickModal =()=>setOpen(false)
     return (
         <div className="riderdashboard">
             <div className="rider_intro">
@@ -54,9 +36,10 @@ const RiderDashboard = () => {
                         </div>
                         <div className="sub_text">Individual Delivery agent</div>
                     </div>
+                    
                     <div className="middle">
                         {
-                            dummyData.map(item=>(
+                            riderInfoData.map(item=>(
                                 <div className="vendor_contact" key={item.id}>
                                 <img src={item.image} alt="" />
                                 <div className="details">
@@ -82,6 +65,19 @@ const RiderDashboard = () => {
                     </div>
                 </div>
             </div>
+            <div className="rider_metrics">
+                {riderMetrics.map((item) => (
+                    <div className="vendor_contact" key={item.id}>
+                        <img src={item.icon} alt={item.title} />
+                        <div className="details">
+                            <div className="title">{item.title}</div>
+                            <div className="value">{item.value}</div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <Table data={riderDummyData} columns={COLUMNS} tablefilter={<TableFilter filterItemsArray={riderFilterItemsArray} onClick={()=>setOpen(true)}  isRider={true}/>}/>
+            <RiderDashboardModal open={open} onClose={handleClickModal}/>
         </div>
     );
 };

@@ -1,0 +1,47 @@
+.rider_right_sidebar {
+    margin-top: 5rem;
+    .top {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .right {
+                font-family: Nunito, sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: center;
+                text-decoration-line: underline;
+                color: #b0abab;
+            }
+        }
+    }
+    .bottom {
+        .container_div {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .list_items {
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+                align-items: center;
+
+                .text {
+                    font-family: Nunito, sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: #424242;
+                }
+            }
+        }
+    }
+}

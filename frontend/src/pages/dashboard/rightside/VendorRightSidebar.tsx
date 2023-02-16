@@ -1,7 +1,7 @@
 import React from "react";
 import "./vendorrightbar.scss";
-import {RxCaretRight, RxDotFilled } from "react-icons/rx";
 import {BsArrowDown, BsFillCheckSquareFill } from "react-icons/bs";
+import RecentNotifications from "../../../components/recent_notifications/RecentNotifications";
 
 
 const VendorRightSidebar = () => {
@@ -13,27 +13,7 @@ const VendorRightSidebar = () => {
         <div className="vendor_right_sidebar">
             <div className="top">
                 <div className="title">Notifications</div>
-                <div className="container_div">
-                    <div className="header_items">
-                        <div className="left">Recent Notifications</div>
-                        <div className="right">
-                            <span>View all </span>
-                            <RxCaretRight/>
-                        </div>
-                    </div>
-                    {
-                        array.map((v, i)=>(
-                            <div className="list_items" key={i}>
-                            <div className="dot"><RxDotFilled  color="#0AC947" fontSize={24}/></div>
-                            <div className="text">{v}</div>
-                            <div>
-                                <BsArrowDown color="#0AC947"/>
-                            </div>
-                        </div>
-                        ))
-                       }
-                   
-                </div>
+                <RecentNotifications array={array} />
             </div>
             <div className="bottom">
                 <div className="title">History</div>
