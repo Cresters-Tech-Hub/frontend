@@ -5,6 +5,7 @@ import mobileMenuReducer from "../reducer/mobileMenuReducer";
 import userReducer from "../reducer/userReducer";
 import rightSidebarReducer from "../reducer/rightSidebarReducer";
 import countDownTimerReducer from "../reducer/countDownReducer";
+import utilsReducer from "../reducer/utilsReducer";
 
 export const store = configureStore({
     reducer: {
@@ -13,7 +14,8 @@ export const store = configureStore({
         mobileMenuStatus: mobileMenuReducer,
         user: userReducer,
         rightSidebarReducer: rightSidebarReducer,
-        CountDownTimer:countDownTimerReducer
+        CountDownTimer:countDownTimerReducer,
+        utilsSlice:utilsReducer
     }
 });
 

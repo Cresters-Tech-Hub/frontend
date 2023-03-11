@@ -12,9 +12,10 @@ import { RootState } from "../../../store";
 interface IMain {
     component: React.ReactNode;
     isUserDashboard?: boolean;
+    showWelcome?:boolean
 }
 
-const Main = ({ component, isUserDashboard }: IMain) => {
+const Main = ({ component, isUserDashboard, showWelcome }: IMain) => {
     const {
         data: { name, location, path }
     } = useSelector((state: RootState) => state.user);
@@ -44,7 +45,7 @@ const Main = ({ component, isUserDashboard }: IMain) => {
                 className="dashboard_topbar"
             />
             <div className="dashboard_body">
-                <div className="title">Welcome {name && name}😊</div>
+              {!!showWelcome && <div className="title">Welcome {name && name}😊</div>}
                 {isUserDashboard && (
                     <div className="subtitle">
                         Manage your store items, orders and so much more...

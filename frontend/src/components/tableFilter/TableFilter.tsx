@@ -6,10 +6,12 @@ import addIcon from "../../assets/images/add_products.png";
 import rightCaret from "../../assets/images/right_caret.png";
 import mail_incoming from "../../assets/images/mail_incoming.png";
 
+
 interface IFilterTop{
     id:number,
     text:string
 }
+
 interface ISelectMenuOptions{
     id: number, label: string, value: string
 }
@@ -35,7 +37,7 @@ export default function TableFilter({filterItemsArray, selectOptions, isRider, o
                 {filterItemsArray.map((item, i) => (
                     <div
                         key={item.id}
-                        className={`left ${item.id === isActive.id && "active"}`}
+                        className={`${item.id === isActive.id && "active"}`}
                         onClick={() => setIsActive({ ...isActive, id: i, text: item.text })}
                     >
                         {item.text}

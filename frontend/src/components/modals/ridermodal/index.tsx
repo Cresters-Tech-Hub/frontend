@@ -6,25 +6,31 @@ import Button from "../../buttons";
 import { incomingOrderData } from "../../../assets/JsonData/constants";
 import AcceptModal from '../rideracceptmodal/index';
 import AcceptOrRejectModal from "../declineoracceptmodal";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCountDownTimer } from "../../../reducer/countDownReducer";
-
+import {AiOutlineClose} from 'react-icons/ai'
+import { RootState } from '../../../store/index';
+import { setDecline } from "../../../reducer/utilsReducer";
 
 interface IRiderModalProps {
     open: boolean;
     onClose: ((event: {}, reason: "backdropClick" | "escapeKeyDown") => void) | undefined;
-    onClick?: Function | undefined;
+    onClick: Function
 }
 
 export default function RiderDashboardModal({ open, onClose, onClick }: IRiderModalProps) {
+
+    const {decline} = useSelector((state:RootState)=>state.utilsSlice)
    
     const [openModal, setOpenModal] = useState(false)
-    const closeModal = ()=>setOpenModal(false)
+    
     const [dataSet, setDataSet]= useState({start:1, next:3})
     const [successOpen, setsuccessOpen] = useState(false)
     const [isTurnedOn, setIsTurnedOn] = useState(true);
 
     const dispatch = useDispatch()
+
+    const closeModal = ()=>setOpenModal(false)
 
     const onIsTurnONChange = (checked:boolean) => {
         setIsTurnedOn(checked);
@@ -32,7 +38,11 @@ export default function RiderDashboardModal({ open, onClose, onClick }: IRiderMo
             setIsTurnedOn(false);
         }
       };
+      const handleDecline=()=>{
+        dispatch(setDecline(true))
+      }
       const handleSucessModal=()=>{
+        dispatch(setDecline(false))
         dispatch(setCountDownTimer(true))
         setsuccessOpen(true)
         if(successOpen) {
@@ -40,22 +50,24 @@ export default function RiderDashboardModal({ open, onClose, onClick }: IRiderMo
         }
       }
 
-      const handleClose =()=>{setsuccessOpen(false)}
+      const handleClose =()=>{
+        dispatch(setDecline(false));
+        setsuccessOpen(false)
+    }
       const prevHandler=()=>{
         if(dataSet.start > 1){
             setDataSet({...dataSet, start:dataSet.start - 3, next:dataSet.next -3})
         }
       }
   
-      const nextHandler=()=>{
-       
-            setDataSet({...dataSet, start:dataSet.start + 3, next:dataSet.next + 3})
-        
+      const nextHandler=()=>{   
+            setDataSet({...dataSet, start:dataSet.start + 3, next:dataSet.next + 3}) 
       }
 
     return (
         <Modal open={open} onClose={onClose} className="rider_modal_container">
             <div className="modal_container">
+                <div className="close" onClick={()=>onClick(false)}><AiOutlineClose fontSize="24px"/></div>
             <div className="rider_modal">
                 <div className="top">
                     <div className="text">
@@ -143,9 +155,9 @@ export default function RiderDashboardModal({ open, onClose, onClick }: IRiderMo
                     </div>
                 </div>
                {
-                !openModal && <AcceptModal setAccept={()=>{setOpenModal(true); dispatch(setCountDownTimer(true))}} title="Success" text="Please note: You have a time frame of 10 minutes to decline this offer incase you are no longer available. Once this time elapse, you will be unable to decline this offer anymore!" open={successOpen} onClose={handleClose} onClick={handleClose} subTitle="Delivery Request offer has been accepted!"/>
+                <AcceptModal setAccept={()=>{setOpenModal(true); dispatch(setCountDownTimer(true))}} title="Success" text="Please note: You have a time frame of 10 minutes to decline this offer incase you are no longer available. Once this time elapse, you will be unable to decline this offer anymore!" open={successOpen} onClose={handleClose} onClick={handleClose} subTitle="Delivery Request offer has been accepted!"/>
                } 
-               <AcceptOrRejectModal open={openModal} onClose={closeModal} onClick={closeModal}/>
+              <AcceptOrRejectModal open={openModal} onClose={closeModal}/>
             </div>
            
         </Modal>

@@ -23,6 +23,8 @@ import RiderDashboard from "../../pages/dashboard/main/RiderDashboard";
 import VendorDashboard from "../../pages/dashboard/main/VendorDashboard";
 import VendorRightSidebar from "../../pages/dashboard/rightside/VendorRightSidebar";
 import RiderRightsidebar from "../../pages/dashboard/rightside/RiderRightsidebar";
+import AcceptedRide from '../../pages/dashboard/main/AcceptedRide';
+import AcceptRideRightSidebar from '../../pages/dashboard/rightside/AcceptRideRightSidebar';
 
 const { home } = APPNAVIGATIONROUTES;
 
@@ -66,7 +68,7 @@ export const AppRoutes = () => {
                                         }
                                     />
                                 }
-                                main={<Main component={<MainDashboard />} isUserDashboard={true} />}
+                                main={<Main component={<MainDashboard />} isUserDashboard={true} showWelcome={true}/>}
                                 sidebar={<Sidebar menuData={authMenu} />}
                             />
                         ) : (
@@ -81,7 +83,7 @@ export const AppRoutes = () => {
                             <WithoutAuthDashBoard
                                 rightbar={<RightSidebar component={<VendorRightSidebar />} />}
                                 main={
-                                    <Main component={<VendorDashboard />} isUserDashboard={true} />
+                                    <Main component={<VendorDashboard />} isUserDashboard={true} showWelcome={true}/>
                                 }
                                 sidebar={<Sidebar menuData={userMenu} />}
                             />
@@ -103,7 +105,29 @@ export const AppRoutes = () => {
                                     />
                                 }
                                 main={
-                                    <Main component={<RiderDashboard />} isUserDashboard={false} />
+                                    <Main component={<RiderDashboard />} isUserDashboard={false} showWelcome={true}/>
+                                }
+                                sidebar={<Sidebar menuData={riderMenu} />}
+                            />
+                        ) : (
+                            <Navigate to="/auth/login" state="/user" replace={true} />
+                        )
+                    }
+                />
+                <Route
+                    path="accepted_ride"
+                    element={
+                        name && role?.toLowerCase() === "delivery agent" ? (
+                            <WithoutAuthDashBoard
+                                rightbar={
+                                    <RightSidebar
+                                        component={
+                                            <AcceptRideRightSidebar />
+                                        }
+                                    />
+                                }
+                                main={
+                                    <Main component={<AcceptedRide />} isUserDashboard={false} />
                                 }
                                 sidebar={<Sidebar menuData={riderMenu} />}
                             />

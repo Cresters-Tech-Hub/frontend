@@ -89,7 +89,8 @@ export const Table = <T extends object>({ data, columns, tablefilter }: ReactTab
                         ))}
                     </tbody>
                 </div>
-                <div className="table_footer">
+            </table>
+            <div className="table_footer">
                         <button
                             className="border rounded p-1"
                             onClick={() => table.previousPage()}
@@ -110,7 +111,6 @@ export const Table = <T extends object>({ data, columns, tablefilter }: ReactTab
                             <span>Next</span>{" >"}
                         </button>
                     </div>
-            </table>
         </div>
     );
 };

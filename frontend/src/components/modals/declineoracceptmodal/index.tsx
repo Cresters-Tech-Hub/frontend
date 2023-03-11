@@ -5,40 +5,70 @@ import driveImg from "../../../assets/images/drive_line.png";
 import timeImg from "../../../assets/images/time_filled.svg";
 import Button from "../../buttons";
 import { RootState } from "../../../store/index";
-import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useState, useEffect, useLayoutEffect } from "react";
 import tickImg from "../../../assets/images/tick_mark.svg";
 import ellipsis from "../../../assets/images/ellipsis_circle.svg";
+import RegModal from "../regmodal";
+import declineImg from "../../../assets/images/declineImg.png";
+import { setDecline } from "../../../reducer/utilsReducer";
+import { useNavigate } from 'react-router-dom';
 
 interface IRiderModalProps {
     open: boolean;
-    onClose: ((event: {}, reason: "backdropClick" | "escapeKeyDown") => void);
-    onClick: Function;
+    onClose: (event: {}, reason: "backdropClick" | "escapeKeyDown") => void;
 }
 
-export default function AcceptOrRejectModal({ open, onClose, onClick }: IRiderModalProps) {
-    const [secs, setSecs] = useState(59);
-    const [mins, setMins] = useState(9);
-    const { isClicked } = useSelector((state: RootState) => state.CountDownTimer);
+export default function AcceptOrRejectModal({ open, onClose }: IRiderModalProps) {
+    const navigate = useNavigate();
+    const [secs, setSecs] = useState(9);
+    const [mins, setMins] = useState(0);
+    const [openDeclineModal, setOpenDeclineModal] = useState(false);
+    const {
+        CountDownTimer: { isClicked },
+        utilsSlice: { decline }
+    } = useSelector((state: RootState) => state);
+    const dispatch = useDispatch();
 
-useEffect(()=>{
-  const timer = setInterval(()=>{
-    if(isClicked){
-    setSecs(secs - 1);
-    if(secs === 0) {
-      setMins(mins-1);
-      if(mins !==0) setSecs(59);
-      else  {setMins(0); setSecs(0);
-        return
+    const handleDecline = () => {
+        dispatch(setDecline(true));
+        setOpenDeclineModal(true);
+    };
+
+    const viewAcceptedRide=()=>{
+        navigate("/accepted_ride", {replace:true}) 
+        dispatch(setDecline(false));
+        setOpenDeclineModal(false);
     }
-       
-    }
-  }
-  }, 1000);
 
-  return ()=> clearInterval(timer)
-})
+    const handleCloseDeclineModal = () => {
+        setOpenDeclineModal(false);
+    };
 
+    const closeParentModal = () => {
+        onClose("backdropClick", "escapeKeyDown");
+        dispatch(setDecline(false));
+        setOpenDeclineModal(false);
+    };
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            if (isClicked) {
+                setSecs(secs - 1);
+                if (secs === 0) {
+                    setMins(mins - 1);
+                    if (mins !== 0) setSecs(59);
+                    else {
+                        setMins(0);
+                        setSecs(0);
+                        return;
+                    }
+                }
+            }
+        }, 1000);
+
+        return () => clearInterval(timer);
+    });
 
     return (
         <Modal open={open} onClose={onClose} className="rider_modal_container_accept">
@@ -123,13 +153,13 @@ useEffect(()=>{
                                     <td>
                                         {mins === 0 && secs === 0 ? (
                                             <div className="rider_non_schedule">
-                                               <img
+                                                <img
                                                     src={ellipsis}
                                                     height="26px"
                                                     width="26px"
                                                     alt=""
                                                 />
-                                                <span>Non-reschedule</span>{" "}                                               
+                                                <span>Non-reschedule</span>{" "}
                                             </div>
                                         ) : null}
                                     </td>
@@ -144,9 +174,29 @@ useEffect(()=>{
                             </tbody>
                         </table>
                         <div className="btn">
-                            <Button text="Decline Offer" style={{ padding: "15px" }} onClick={()=> onClick()}/>
+                            {mins === 0 && secs === 0 ? (
+                                <Button
+                                    text="View Accepted Ride"
+                                    style={{ padding: "11px", fontSize:"13px" }}
+                                    onClick={viewAcceptedRide}
+                                />
+                            ) : (
+                                <Button
+                                    text="Decline Offer"
+                                    style={{ padding: "15px" }}
+                                    onClick={handleDecline}
+                                />
+                            )}
                         </div>
                     </div>
+                    <RegModal
+                        img={declineImg}
+                        open={openDeclineModal}
+                        onClose={handleCloseDeclineModal}
+                        onClick={closeParentModal}
+                        title="Successfully Declined"
+                        text="Opps, this accepted offer has been declined and no longer available to you!"
+                    />
                 </div>
             </div>
         </Modal>

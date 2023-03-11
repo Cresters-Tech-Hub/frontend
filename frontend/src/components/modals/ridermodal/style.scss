@@ -1,3 +1,5 @@
+@import "../../../assets/css/partials/break_points";
+
 .rider_modal_container {
     display: flex;
     align-items: center;
@@ -11,6 +13,12 @@
         background: #ffffff;
         border-radius: 30px;
         gap: 1.5rem;
+        position: relative;
+        .close{
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
         .rider_modal {
             display: flex;
             flex-direction: column;
@@ -211,4 +219,21 @@
             }
         }
     }
+}
+
+@include mobile(768px){
+    .rider_modal_container {
+        overflow-y: scroll;
+        .modal_container {
+            width: 80%;
+            .rider_modal {
+                .top {
+                    .switch {
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+    
 }

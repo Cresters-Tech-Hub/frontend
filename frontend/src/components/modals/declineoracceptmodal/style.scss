@@ -1,3 +1,5 @@
+@import "../../../assets/css/partials/break_points";
+
 .rider_modal_container_accept {
     display: flex;
     align-items: center;
@@ -216,6 +218,25 @@
                     align-items: center;
                     justify-content: center;
                     margin-top: 3rem;
+                }
+            }
+        }
+    }
+}
+
+@include mobile(768px){
+    .rider_modal_container_accept {
+        .modal_container_accept {
+            width: 80%;
+            .rider_modal {
+                .top {
+                    flex-direction: column;
+                    gap: 1rem;
+                    .left {
+                        font-size: 12px;
+                        line-height: 12px;
+                        color: #111827;
+                    }
                 }
             }
         }

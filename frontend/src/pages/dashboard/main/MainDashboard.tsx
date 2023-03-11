@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { dashboardOptions, vendors } from "../../../assets/JsonData/itemOptions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setRightSidebarType } from "../../../reducer/rightSidebarReducer";
 import { useWindowSize } from "../../../hooks";
 import { convertFirstLetterToUpperCase, formatAmount } from "../../../utils/helper";
-import sort from "../../../assets/images/sort.png";
 import star from "../../../assets/images/star.png";
 import Slider from "react-slick";
 import Filter from "../../../components/filter/Filter";
@@ -12,10 +11,11 @@ import Filter from "../../../components/filter/Filter";
 export const MainDashboard = () => {
     const [index, setIndex] = useState({ index: 0, type: "food" });
     const dispatch = useDispatch();
+    const width = useWindowSize();
     const settings = {
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: width < 768 ? 2 : 4,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
@@ -25,7 +25,7 @@ export const MainDashboard = () => {
         setIndex({ ...index, index: i, type: option });
         dispatch(setRightSidebarType({ type: option, index: i }));
     };
-    const width = useWindowSize();
+   
     return (
         <>
             <div className="item_options">

@@ -77,7 +77,7 @@ const RiderDashboard = () => {
                 ))}
             </div>
             <Table data={riderDummyData} columns={COLUMNS} tablefilter={<TableFilter filterItemsArray={riderFilterItemsArray} onClick={()=>setOpen(true)}  isRider={true}/>}/>
-            <RiderDashboardModal open={open} onClose={handleClickModal}/>
+            <RiderDashboardModal open={open} onClose={handleClickModal} onClick={setOpen}/>
         </div>
     );
 };

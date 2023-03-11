@@ -1,0 +1,59 @@
+.accept_ride_rightsidebar {
+    margin-top: 6rem;
+    .top_title {
+        font-family: Nunito, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        color: #06c149;
+    }
+    .payment {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-family: Nunito, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 16px;
+        color: #35383f;
+        .left {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            span:nth-of-type(2) {
+                color: #35383f;
+            }
+            span:nth-of-type(1) {
+                color: #a8aeb7;
+            }
+        }
+        .right {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.2rem;
+        }
+    }
+    .map {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .title {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            span {
+                font-family: Nunito, sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 16px;
+                color: #35383f;
+            }
+        }
+    }
+}

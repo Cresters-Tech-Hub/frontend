@@ -1,0 +1,173 @@
+.accept_ride {
+    .top_title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .navigation_left {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+            & span:nth-of-type(1) {
+                font-family: Plus Jakarta Sans, sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #a8aeb7;
+            }
+            & span:nth-of-type(2) {
+                font-family: Plus Jakarta Sans, sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #333333;
+            }
+        }
+        .navigation_right {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.3rem;
+            font-family: Plus Jakarta Sans, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #333333;
+        }
+    }
+    .seller_info {
+        margin-top: 2rem;
+        .title {
+            font-family: Nunito, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: 0.01em;
+            color: #06c149;
+        }
+        .info_container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .store_name {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: row;
+                gap: 0.2rem;
+                align-items: center;
+                span {
+                    font-family: Plus Jakarta Sans, sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 32px;
+                    color: #35383f;
+                }
+            }
+            .view_on_map {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.3rem;
+                span {
+                    font-family: Nunito, sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 10px;
+                    line-height: 16px;
+                    color: #000000;
+                }
+            }
+        }
+        .store_type {
+            font-family: Nunito, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 16px;
+            color: #424242;
+        }
+    }
+    .locationn {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.3rem;
+        .location_container {
+            font-family: Plus Jakarta Sans, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 7px;
+            line-height: 12px;
+            color: #9e9e9e;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            .title {
+                font-family: Plus Jakarta Sans, sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 12px;
+                color: #9e9e9e;
+            }
+            .info {
+                color: #9e9e9e;
+                font-size: 12px;
+                display: flex;
+                flex-direction: row;
+                gap: 0.3rem;
+                .addr,
+                .time,
+                .distance {
+                    color: #35383f;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .package_info {
+        margin-top: 1.5rem;
+        .title_main {
+            font-family: Nunito, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: #06c149;
+            margin-bottom: 1rem;
+        }
+        .package_container {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            .info {
+                display: flex;
+                flex-direction: column;
+                gap: 0.1rem;
+                align-items: flex-start;
+                line-height: 12px;
+                font-family: Plus Jakarta Sans, sans-serif;
+                font-style: normal;
+                .title {
+                    font-weight: 400;
+                    font-size: 12px;
+                    color: #35383f;
+                }
+                .value {
+                    font-weight: 700;
+                    font-size: 13px;
+                    color: #35383f;
+                }
+            }
+        }
+    }
+}

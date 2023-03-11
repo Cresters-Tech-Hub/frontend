@@ -48,6 +48,7 @@ const Sidebar = ({ menuData }: ISidebar) => {
         setIndex(id);
 
         if (itemName === "Profile") navigate(`/${path}`);
+        if (itemName === "Dashboard") navigate("/dashboard");
     };
 
     const sidebarMenuTop = name ? menuData : menu;

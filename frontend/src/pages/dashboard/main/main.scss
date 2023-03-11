@@ -2,6 +2,7 @@
 @import "../../../assets/css/partials/functions";
 
 .dashboard_main {
+    margin-right: 2rem;
     .mobile_nav_container {
         @include flex(row);
         width: 100%;
@@ -138,15 +139,15 @@
                         font-family: Nunito, sans-serif;
                         font-style: normal;
                         font-weight: 700;
-                        font-size: 29px;
-                        line-height: 20px;
+                        font-size: 20px;
+                        line-height: 18px;
                         color: #35383f;
                     }
                     & .vendor {
                         font-family: Nunito, sans-serif;
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 23px;
+                        font-size: 21px;
                         line-height: 16px;
                         color: #b9c3d2;
                     }
