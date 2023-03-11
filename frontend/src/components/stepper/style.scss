@@ -1,0 +1,42 @@
+.order_stepper {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    .progress_item {
+        font-family: Nunito, sans-serif;
+        font-style: normal;
+        line-height: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        .item {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            span {
+                font-weight: 500;
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                color: #474340;
+            }
+        }
+        .dots {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+            span {
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 10px;
+                display: flex;
+                align-items: center;
+                text-align: right;
+                letter-spacing: -0.005em;
+                color: rgba(71, 67, 64, 0.3);
+            }
+        }
+    }
+}

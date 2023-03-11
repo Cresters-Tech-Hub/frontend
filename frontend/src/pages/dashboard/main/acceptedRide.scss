@@ -16,6 +16,7 @@
                 font-size: 16px;
                 line-height: 24px;
                 color: #a8aeb7;
+                cursor: pointer;
             }
             & span:nth-of-type(2) {
                 font-family: Plus Jakarta Sans, sans-serif;
@@ -167,6 +168,54 @@
                     font-size: 13px;
                     color: #35383f;
                 }
+            }
+        }
+    }
+    .view_call_btns {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    .order_progress {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+        .title {
+            font-family: Plus Jakarta Sans, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.01em;
+            color: #35383f;
+        }
+        .tracking_container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: Nunito, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+            .title {
+                font-size: 13px;
+                display: flex;
+                align-items: center;
+                color: rgba(18, 20, 32, 0.5);
+            }
+            .value {
+                font-weight: 600;
+                font-size: 10px;
+                line-height: 16px;
+                display: flex;
+                align-items: center;
+                color: #474340;
             }
         }
     }
