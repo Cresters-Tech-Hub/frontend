@@ -7,10 +7,10 @@ import table_img from "../../../assets/images/table_img.png";
 import { vendorContact, vendorTotals } from "../../../assets/JsonData/profile";
 import Chart from "react-apexcharts";
 import Metrics from "../../../components/metrics/Metrics";
-import {Table } from "../../../components/table/Table";
+import { Table } from "../../../components/table/Table";
 import { useTableColumns } from "../../../assets/JsonData/columns";
-import TableFilter from '../../../components/tableFilter/TableFilter';
-import { filterItemsArray, selectOptions } from '../../../assets/JsonData/constants';
+import TableFilter from "../../../components/tableFilter/TableFilter";
+import { filterItemsArray, selectOptions } from "../../../assets/JsonData/constants";
 
 export default function VendorDashboard() {
     const COLUMNS = useTableColumns();
@@ -20,7 +20,7 @@ export default function VendorDashboard() {
     const dummyData = [
         {
             id: 0,
-            itemName: {image:`${table_img}`, details:{title:"Fit Jumpsuit", rating:5}},
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
             description: "This is a great wear for ladies....",
             properties: "Size : Medium",
             price: "3500",
@@ -29,7 +29,7 @@ export default function VendorDashboard() {
         },
         {
             id: 1,
-            itemName: {image:`${table_img}`, details:{title:"Fit Jumpsuit", rating:5}},
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
             description: "This is a great wear for ladies....",
             properties: "Size : Medium",
             price: "3500",
@@ -38,7 +38,7 @@ export default function VendorDashboard() {
         },
         {
             id: 2,
-            itemName: {image:`${table_img}`, details:{title:"Fit Jumpsuit", rating:5}},
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
             description: "This is a great wear for ladies....",
             properties: "Size : Medium",
             price: "3500",
@@ -47,13 +47,13 @@ export default function VendorDashboard() {
         },
         {
             id: 3,
-            itemName: {image:`${table_img}`, details:{title:"Fit Jumpsuit", rating:5}},
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
             description: "This is a great wear for ladies....",
             properties: "Size : Medium",
             price: "3500",
             inventory: 5,
             discount: 0
-        },
+        }
     ];
 
     return (
@@ -64,7 +64,7 @@ export default function VendorDashboard() {
             </div>
             <div className="vendor_intro">
                 <div className="left">
-                    <img src={vendorIntroImg} alt="vendor Intro Image" />
+                    <img src={vendorIntroImg} alt="" />
                 </div>
                 <div className="right">
                     <div className="title_container">
@@ -166,7 +166,17 @@ export default function VendorDashboard() {
                     </div>
                 </div>
             </div>
-            <Table data={dummyData} columns={COLUMNS} tablefilter={<TableFilter filterItemsArray={filterItemsArray} selectOptions={selectOptions} isRider={false}/>}/>
+            <Table
+                data={dummyData}
+                columns={COLUMNS}
+                tablefilter={
+                    <TableFilter
+                        filterItemsArray={filterItemsArray}
+                        selectOptions={selectOptions}
+                        isRider={false}
+                    />
+                }
+            />
         </div>
     );
 }

@@ -7,3 +7,8 @@ export const convertFirstLetterToUpperCase = (value: string) => {
     let rest = strArray.join("").slice(1);
     return firstLetter.concat(rest);
 };
+
+export const convertToNaira = (amount: string) => {
+    const naira = "&#8358;"
+    return naira + formatAmount(amount);
+};

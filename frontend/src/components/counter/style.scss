@@ -1,0 +1,48 @@
+.stock_counter {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+    .btns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        button {
+            width: 23px;
+            height: 20px;
+            background: #eeeeee;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        & input {
+            width: 25px;
+            text-align: center;
+            outline: none;
+            width: 23px;
+            border: none;
+            height: 18px;
+            border-radius: 4px;
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 8.57608px;
+            line-height: 11px;
+            color: #081735;
+        }
+    }
+    .text {
+        font-family: Nunito, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #0abe75;
+    }
+}

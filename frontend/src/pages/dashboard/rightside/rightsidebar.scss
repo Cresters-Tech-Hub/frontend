@@ -16,13 +16,13 @@
             outline: none;
             border: none;
         }
-        .login{
+        .login {
             padding: 10px 19px;
-            background:#f4fff2;
-            color:  #06c149;
+            background: #f4fff2;
+            color: #06c149;
             border-radius: 16px;
             font-size: 13px;
-            border: 1px solid  #06c149;;
+            border: 1px solid #06c149;
         }
     }
     .rightsidebar_login_user {
@@ -30,10 +30,10 @@
         flex-direction: row;
         gap: 1rem;
         align-items: center;
-        .user_details_right{
-           .role{
-            font-size: 12px;
-           }
+        .user_details_right {
+            .role {
+                font-size: 12px;
+            }
         }
     }
     .rightSidebar_container {
@@ -81,6 +81,23 @@
                 text-align: start;
                 align-self: flex-start;
                 margin-bottom: 3rem;
+            }
+            .img {
+                position: relative;
+                .promo_badge {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    padding: 2px 5px;
+                    left: 24px;
+                    bottom: 12px;
+                    background: #06c149;
+                    border-radius: 20px;
+                    font-size: 10px;
+                    color: #fff;
+                }
             }
             .details {
                 margin-top: 1rem;

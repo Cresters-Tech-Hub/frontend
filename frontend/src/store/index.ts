@@ -6,6 +6,7 @@ import userReducer from "../reducer/userReducer";
 import rightSidebarReducer from "../reducer/rightSidebarReducer";
 import countDownTimerReducer from "../reducer/countDownReducer";
 import utilsReducer from "../reducer/utilsReducer";
+import cartCounterSlice from "../reducer/cartReducer";
 
 export const store = configureStore({
     reducer: {
@@ -15,7 +16,8 @@ export const store = configureStore({
         user: userReducer,
         rightSidebarReducer: rightSidebarReducer,
         CountDownTimer:countDownTimerReducer,
-        utilsSlice:utilsReducer
+        utilsSlice:utilsReducer,
+        cartSlice:cartCounterSlice,
     }
 });
 

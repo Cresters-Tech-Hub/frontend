@@ -1,0 +1,89 @@
+.slider_similar_items {
+    .slider_title {
+        font-family: Nunito, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        color: #000;
+        align-self: flex-start;
+        justify-content: flex-start;
+        display: flex;
+        margin-bottom: 1.2rem;
+    }
+    .slider_display_carousel {
+        .slider_posters {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+            cursor: pointer;
+            .slider_img {
+                position: relative;
+                .promo_badge {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    padding: 2px 5px;
+                    left: 14px;
+                    bottom: 8px;
+                    background: #06c149;
+                    border-radius: 20px;
+                    font-size: 10px;
+                    color: #fff;
+                }
+            }
+            .details {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+                font-family: Nunito, sans-serif;
+                .title {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 18px;
+                    color: #35383f;
+                }
+                .vendor {
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 13px;
+                    line-height: 16px;
+                    color: #b9c3d2;
+                }
+                .rating {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 0.5rem;
+                    font-family: DM Sans, sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 10.5636px;
+                    line-height: 18px;
+                    color: #9e9e9e;
+                    & div:nth-of-type(2) {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 0.2rem;
+                    }
+                }
+            }
+            .amount {
+                font-family: DM Sans, sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12.0727px;
+                line-height: 20px;
+                color: #06c149;
+            }
+        }
+    }
+}

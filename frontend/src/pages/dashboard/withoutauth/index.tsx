@@ -6,7 +6,7 @@ import { useWindowSize } from "../../../hooks";
 interface IDashBoard {
     sidebar: React.ReactNode;
     main: React.ReactNode;
-    rightbar: React.ReactNode;
+    rightbar?: React.ReactNode;
 }
 
 export default function WithoutAuthDashBoard({ sidebar, main, rightbar }: IDashBoard) {

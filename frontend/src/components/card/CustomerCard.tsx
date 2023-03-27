@@ -6,14 +6,13 @@ import IconButton from "../buttons/IconButton";
 import { IoCallSharp } from "react-icons/io5";
 import { BsChatLeftTextFill } from "react-icons/bs";
 
-
 interface Props {
     img?: string;
     name?: string;
     role?: string;
     address?: string;
     phone?: string;
-    style?:React.CSSProperties
+    style?: React.CSSProperties;
 }
 
 const CustomerCard = ({ img, name, role, address, phone, style }: Props) => {
@@ -28,8 +27,19 @@ const CustomerCard = ({ img, name, role, address, phone, style }: Props) => {
             </div>
             <div className="phone">{phone}</div>
             <div className="btn">
-                <IconButton title="Call" icon={<IoCallSharp/>}/>
-                <IconButton title="Message" icon={<BsChatLeftTextFill/>} bg="white" color="#35383F" outline="1px solid black"/>
+                <IconButton
+                    title="Call"
+                    icon={<IoCallSharp />}
+                    style={{ width: "100px", padding: "10px 15px" }}
+                />
+                <IconButton
+                    title="Message"
+                    icon={<BsChatLeftTextFill />}
+                    bg="white"
+                    color="#35383F"
+                    outline="1px solid black"
+                    style={{ width: "100px", padding: "10px 15px" }}
+                />
             </div>
         </div>
     );
