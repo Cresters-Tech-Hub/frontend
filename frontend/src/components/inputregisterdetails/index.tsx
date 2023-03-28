@@ -1,7 +1,7 @@
 import React from 'react'
 import AccountType from '../accountType/AccountType'
 import './style.scss'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
 
 

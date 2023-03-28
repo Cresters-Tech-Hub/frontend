@@ -1,0 +1,102 @@
+@import "../../../assets/css/partials/break_points";
+@import "../../../assets/css/partials/functions";
+@import "../../../assets/css/partials/colors";
+@import "../../../assets/css/partials/buttons";
+@import "../../../assets/css/partials/typography";
+
+.address_modal {
+    width: 100vw;
+    height: 100vh;
+    @include center(column);
+    .address_container {
+        width: 777px;
+        height: 498px;
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 6px 6px 40px 3px rgba(140, 152, 164, 0.2);
+        padding: 8px 15px;
+        .address_modal_close {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 15px;
+            & div:last-of-type {
+                cursor: pointer;
+            }
+        }
+        .add_address_content {
+            margin-top: 1rem;
+            .title {
+                font-family: Plus Jakarta Sans, sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #424242;
+            }
+            .add_address_input_items {
+                padding-left: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                margin-top: 2rem;
+                .add_address_input {
+                    margin-right: 2rem;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 1rem;
+                    & input,
+                    & select {
+                        width: 50%;
+                        background: #ffffff;
+                        border: 1px solid #e4e7f1;
+                        border-radius: 24px;
+                        padding: 15px;
+                        box-sizing: border-box;
+                        outline: none;
+                    }
+                }
+                .add_address_input.full_address {
+                    & input {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .agreeTerms {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            padding-left: 1rem;
+            margin-top: 1rem;
+            .span {
+                font-family: Plus Jakarta Sans, sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+                letter-spacing: 0.01em;
+                color: #c8ccc8;
+            }
+        }
+        .btn{
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+@include mobile(768px) {
+    .address_modal {
+        .address_container {
+            width: 353px;
+            height: 257;
+        }
+    }
+}

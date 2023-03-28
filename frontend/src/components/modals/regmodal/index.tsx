@@ -30,6 +30,7 @@ export default function RegModal({
     const navigate = useNavigate();
     const handleNavigate = () => {
         onClick && onClick()
+        onClose!("backdropClick", "escapeKeyDown")
     };
     return (
         <Modal open={open} onClose={onClose}>

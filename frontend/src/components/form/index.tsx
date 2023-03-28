@@ -42,7 +42,9 @@ export default function Input({
   return (
     <div className="form" {...rest} style={style}>
       <div className={formClasses}>
-        <img src={startIcon} alt="" width='16.62px' height='16.67px'/>
+       {
+        startIcon && <img src={startIcon} alt="" width='16.62px' height='16.67px'/>
+       } 
         <input
           type={type || "text"}
           value={value}

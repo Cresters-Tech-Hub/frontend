@@ -40,8 +40,6 @@ export const GoBackToHome = () => {
 };
 
 const Control = ({ children, ...props }: ControlProps<OptionsProps>) => {
-    // @ts-ignore
-    const style = { cursor: "pointer" };
 
     return (
         <components.Control {...props} className="select_control">

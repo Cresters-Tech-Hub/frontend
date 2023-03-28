@@ -48,8 +48,13 @@ export default function Checkout() {
     setValue(newValue)
   }
 
+  const handleNextpage =()=>{
+    setValue(1)
+  }
+
   return (
     <div className="profile_main">
+      <div className="checkout_title">Checkout</div>
       <Box sx={{ width: '100%' }}>
         <Box>
           <Tabs
@@ -58,12 +63,12 @@ export default function Checkout() {
             aria-label="basic tabs"
             className="tabs_container"
           >
-            <Tab label="Review Order" {...a11yProps(0)} />
-            <Tab label="Set Address & Payment" {...a11yProps(1)} />
+            <Tab label="Review Order" {...a11yProps(0)} sx={{fontSize:"13px", color:"black"}}/>
+            <Tab label="Set Address & Payment" {...a11yProps(1)} sx={{fontSize:"13px",  color:"black"}}/>
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-         <ReviewOrder/>
+         <ReviewOrder handleChange={handleNextpage}/>
         </TabPanel>
         <TabPanel value={value} index={1}>
          <SetAddressAndPayment/>

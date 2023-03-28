@@ -1,0 +1,152 @@
+.setAddressAndPayment {
+    margin-top: 1rem;
+    .continue_shopping {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+        & span {
+            font-family: Plus Jakarta Sans, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            text-decoration-line: underline;
+            color: #316f47;
+        }
+    }
+    .setAddress {
+        .setAddress_title {
+            font-family: Nunito, sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 27px;
+            color: #26251c;
+        }
+        .setAddress_content {
+            padding-left: 1rem;
+            .primary {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                align-items: center;
+                & span:nth-of-type(1) {
+                    font-family: Quicksand, sans-serif;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #35383f;
+                }
+                & span:last-of-type {
+                    font-family: Plus Jakarta Sans, sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 10px;
+                    line-height: 16px;
+                    text-decoration-line: underline;
+                    color: #a8aeb7;
+                }
+            }
+            .address {
+                font-family: Plus Jakarta Sans, sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: 0.01em;
+                color: #35383f;
+            }
+            .phone {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: 0.01em;
+                color: #35383f;
+            }
+        }
+        .addNewAddress {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 45%;
+            & div:last-of-type {
+                cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+                align-items: center;
+                & span:last-of-type {
+                    font-family: Nunito, sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 13.6361px;
+                    line-height: 24px;
+                    letter-spacing: 0.01em;
+                    color: #06c149;
+                }
+            }
+        }
+    }
+    .payment_method_container {
+        margin-top: 2rem;
+        .payment_method_item {
+            width: 45%;
+            .payment_method_title {
+                font-family: Nunito, sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 24px;
+                letter-spacing: 0.01em;
+                color: #000000;
+            }
+            .paymethod_option {
+                margin-bottom: 1.5rem;
+                background: #ffffff;
+                border-radius: 12px;
+                padding: 10px;
+                margin-top: 1.5rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+                .paymethod_option_details {
+                    .title {
+                        font-family: Nunito, sans-serif;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 13.6361px;
+                        line-height: 24px;
+                        letter-spacing: 0.01em;
+                        color: #000000;
+                    }
+                    .desc {
+                        font-family: Nunito, sans-serif;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 10px;
+                        line-height: 16px;
+                        letter-spacing: 0.01em;
+                        color: #726d6d;
+                    }
+                }
+            }
+        }
+    }
+    .btn{
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 45%;
+    }
+}

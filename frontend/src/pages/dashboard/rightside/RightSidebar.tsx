@@ -36,13 +36,13 @@ const RightSidebar = ({ component }: IRightSidebar) => {
                 <div className="rightsidebar_login_user">
                     <div>
                         {
-                            count! > 0 ?  <Badge color="success" badgeContent={count} style={{ marginRight: 5 }}>
-                            <BsHandbagFill fontSize="20px" />
+                            count! > 0 ?  <Badge color="success" badgeContent={count} style={{ marginRight: 5, cursor:"pointer" }}>
+                            <BsHandbagFill fontSize="20px" onClick={()=>navigate("/checkout")}/>
                         </Badge> : null
                         }
                        
                         <Badge color="secondary" variant="dot" invisible={false}>
-                            <IoIosNotifications fontSize="25px" />
+                            <IoIosNotifications fontSize="25px" style={{cursor:"pointer"}}/>
                         </Badge>
                     </div>
                     <div>

@@ -2,9 +2,7 @@ import React from 'react'
 import Select, {
   ActionMeta,
   GroupBase,
-  MultiValue,
   PropsValue,
-  SingleValue,
   StylesConfig,
 } from 'react-select'
 import { SelectComponents } from 'react-select/dist/declarations/src/components'
