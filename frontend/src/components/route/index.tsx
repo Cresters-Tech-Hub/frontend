@@ -32,6 +32,8 @@ import ViewStore from "../../pages/dashboard/vendor/ViewStore";
 import viewStorePromoBg from "../../assets/images/seller_promo_img.png";
 import rightsidebarclothfeatured from "../../assets/images/rightsidebarclothfeatured.png";
 import Checkout from '../../pages/dashboard/checkout/Checkout';
+import ViewOrders from '../../pages/dashboard/user/ViewOrders';
+import ViewOrderRightSidebar from '../../pages/dashboard/rightside/ViewOrderRightSidebar';
 
 const { home } = APPNAVIGATIONROUTES;
 
@@ -232,9 +234,23 @@ export const AppRoutes = () => {
                     element={
                         name && role?.toLowerCase() === "delivery agent" ? (
                             <WithoutAuthDashBoard
-                                rightbar={<RightSidebar component={<AcceptRideRightSidebar />} />}
+                                rightbar={<RightSidebar component={<AcceptRideRightSidebar title="Receiver Information" paymentMode="Online Payment" role="User" paid userName="Adegoke Fola"/>} />}
                                 main={<Main component={<AcceptedRide />} isUserDashboard={false} />}
                                 sidebar={<Sidebar menuData={riderMenu} />}
+                            />
+                        ) : (
+                            <Navigate to="/auth/login" state="/user" replace={true} />
+                        )
+                    }
+                />
+                <Route
+                    path="View_orders"
+                    element={
+                        name && availableRoles.includes(role?.toLowerCase() ? role?.toLowerCase() : "") ? (
+                            <WithoutAuthDashBoard
+                                rightbar={<RightSidebar component={<AcceptRideRightSidebar title="Rider Information" paymentMode="Online Payment" role="Rider" paid userName="Martins Adetola"/>} />}
+                                main={<Main component={<ViewOrders />} isUserDashboard={false} />}
+                                sidebar={<Sidebar menuData={authMenu} />}
                             />
                         ) : (
                             <Navigate to="/auth/login" state="/user" replace={true} />

@@ -7,6 +7,8 @@ import stripes from "../images/similar-images/stripes.png";
 import monchrome from "../images/similar-images/monchrome.png";
 import poker from "../images/similar-images/poker.png";
 import mini from "../images/similar-images/mini.png";
+import cart_bag from "../images/cart_bag.png";
+import cart_blouse from "../images/cart_blouse.png";
 
 export const selectOptions = [
     { id: 0, label: "All Categories", value: "All Categories" },
@@ -193,3 +195,9 @@ export const similarItemsData = [
         amount: "2450"
     }
 ];
+
+export const viewOderItemsData = [
+    {id:0, image:cart_blouse, name:"", color: "Red", quantity: 1, orderNumber:  "#12456", price: "6500", purchaseDate: "24/09/2022"},
+    {id:1, image:cart_bag, name:"", color: "Gray", quantity: 1, orderNumber:  "#12456", price: "6500", purchaseDate: "24/09/2022"},
+    {id:2, image:cart_blouse, name:"", color: "Red", quantity: 1, orderNumber:  "#12456", price: "6500", purchaseDate: "24/09/2022"},
+]

@@ -1,0 +1,33 @@
+.viewOrderItemsData {
+    .viewOrderItemsData_item {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 1rem;
+        .details_right {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            .item_detail_group {
+                .top {
+                    font-family: Plus Jakarta Sans, sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: #a8aeb7;
+                }
+                .bottom {
+                    font-family: Plus Jakarta Sans, sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #000000;
+                }
+            }
+        }
+    }
+}

@@ -5,21 +5,29 @@ import CustomerCard from '../../../components/card/CustomerCard'
 import gisMap from '../../../assets/images/gis_map.png'
 import map from '../../../assets/images/map.png'
 
-const AcceptRideRightSidebar = () => {
+interface Props{
+  role:string
+  title:string
+  paymentMode:string
+  paid:boolean
+  userName:string
+}
+
+const AcceptRideRightSidebar = ({role, title, paymentMode, paid, userName}:Props) => {
   return (
     <div className='accept_ride_rightsidebar'>
-     <div className="top_title">Receiver Information</div>
+     <div className="top_title">{title}</div>
      <div className="payment">
       <div className="left">
       <span>Payment Mode:</span>
-      <span>Online Payment </span>
+      <span>{paymentMode}</span>
       </div>
       <div className="right">
-      <span>Paid</span>
-      <BsFillCheckSquareFill size={10} color='#06C149'/>
+      <span>{paid ? "Paid" : "Pending"}</span>
+      {paid && <BsFillCheckSquareFill size={10} color='#06C149'/>}
       </div>
      </div>
-     <CustomerCard style={{marginTop:"2rem", marginBottom:"2rem"}} name='Adegoke Fola' role='User'
+     <CustomerCard style={{marginTop:"2rem", marginBottom:"2rem"}} name={userName} role={role}
       address='No 202, Itomori Street, Ajao Estate Road, Lagos' phone='09099882200'/>
       <div className="map">
         <div className="title">
