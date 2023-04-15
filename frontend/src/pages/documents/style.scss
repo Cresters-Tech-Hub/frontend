@@ -30,6 +30,8 @@
 }
 
 .documents{
+    max-width: 100vw;
+    overflow-x: hidden;
     .main_title{
         margin-top: 5rem;
         .title{
@@ -80,6 +82,9 @@
     .documents{
         .upload_width{
             width: 100%
+        }
+        .upload_documents_container{
+            padding-left: 10px;
         }
     }
 }

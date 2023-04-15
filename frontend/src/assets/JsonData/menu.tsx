@@ -8,6 +8,8 @@ import { BiCategory } from "react-icons/bi";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { BsClockHistory } from "react-icons/bs";
 
+export const settingsData = ["View Profile", "KYC"]
+
 export const authMenu = [
     {
         id: 1,
@@ -43,7 +45,27 @@ export const userMenu = [
     },
     {
         id: 2,
-        name: "Orders List",
+        name: "My Orders",
+        icon: <IoDocumentTextOutline />,
+        auth: true
+    },
+    {
+        id: 3,
+        name: "History",
+        icon: <BsClockHistory />,
+        auth: true
+    }
+];
+export const vendorMenu = [
+    {
+        id: 1,
+        name: "Dashboard",
+        icon: <BiCategory />,
+        auth: true
+    },
+    {
+        id: 2,
+        name: "Sales",
         icon: <IoDocumentTextOutline />,
         auth: true
     },

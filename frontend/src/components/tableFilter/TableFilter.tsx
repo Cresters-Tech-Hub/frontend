@@ -5,6 +5,8 @@ import search from '../../assets/images/search.png'
 import addIcon from "../../assets/images/add_products.png";
 import rightCaret from "../../assets/images/right_caret.png";
 import mail_incoming from "../../assets/images/mail_incoming.png";
+import { useNavigate } from 'react-router-dom';
+import { Checkbox } from "@mui/material";
 
 
 interface IFilterTop{
@@ -24,6 +26,7 @@ interface ITableFilter{
 
 export default function TableFilter({filterItemsArray, selectOptions, isRider, onClick}:ITableFilter) {
     const [isActive, setIsActive] = useState({ id: 0, text: "On Sales Items" });
+    const navigate = useNavigate();
    
   
     const [selected, setSelected]= useState('All Categories')
@@ -45,6 +48,16 @@ export default function TableFilter({filterItemsArray, selectOptions, isRider, o
                 ))}
             </div>
             <div className="filterItemRow">
+                <span style={{display:"flex", flexDirection:"row", gap:"0.2rem", alignItems:"center"}}> 
+                    <span style={{fontSize:"12px"}}>Select All</span>
+                    <Checkbox
+                        sx={{
+                            color: "#06C149",
+                            "&.Mui-checked": {
+                                color: "#06C149"
+                            }
+                        }}
+                    /></span>
                 {
                     !isRider && <div className="left">
                     <span>Sort by:</span>
@@ -76,7 +89,7 @@ export default function TableFilter({filterItemsArray, selectOptions, isRider, o
                         <span>View Incoming Offers</span>
                     </button>
                 </div> : <div className="right">
-                    <button className="left">
+                    <button className="left" onClick={()=>navigate("/add_product")}>
                         <img src={addIcon} alt="" />
                         <span>Add Product</span>
                     </button>

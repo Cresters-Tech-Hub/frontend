@@ -1,29 +1,60 @@
-@import '../../assets//css/partials/break_points';
-@import '../../assets//css/partials/functions';
+@import "../../assets//css/partials/break_points";
+@import "../../assets//css/partials/functions";
 
-.personal_deatils{
-    .avatar{
-        @include flex(row);
-        gap: 4rem;
-        margin-top: 25px;
+.personal_deatils {
+    .personal_details_upload_profile {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 1rem;
+        .avatar {
+            @include flex(row);
+            gap: 4rem;
+            margin-top: 25px;
+        }
+        .upload-text {
+            font-family: Nunito, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 16px;
+            text-decoration-line: underline;
+            color: #212121;
+        }
     }
+    form{
+        .personal_details_input_item{
+            width: 35%;
+        }
+    }
+
     button {
         width: 25%;
         margin-top: 40px;
     }
 }
 
-@include mobile(768px){
-    .personal_deatils{
+@include mobile(768px) {
+    .personal_deatils {
         button {
             width: 92%;
         }
+        form{
+            .personal_details_input_item{
+                width: 100%;
+            }
+        }
     }
 }
-@include mobile(1024px){
-    .personal_deatils{
+@include mobile(1024px) {
+    .personal_deatils {
         button {
             width: 72%;
         }
+        form{
+            .personal_details_input_item{
+                width: 100%;
+            }
     }
+}
 }

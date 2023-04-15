@@ -59,7 +59,7 @@ const AccountType = ({ isLoginPage }: AccountTypeProp) => {
     const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
         if (type !== "") {
-            dispatch(setUserType(type));
+            dispatch(setUserType({userType:type}));
             navigate("/auth/create");
         }
     };

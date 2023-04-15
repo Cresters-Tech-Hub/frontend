@@ -3,18 +3,20 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface UserTypeInterface {
   userType: string | undefined
+  isEmailVerified?: boolean | undefined
 }
 
 const initialState: UserTypeInterface = {
     userType: '',
+    isEmailVerified: false
 }
 
 export const UserTypeISlice = createSlice({
   name: 'userType',
   initialState,
   reducers: {
-    setUserType: (state, action: PayloadAction<string | undefined>) => {
-      return {...state, userType:action.payload}
+    setUserType: (state, action: PayloadAction<UserTypeInterface>) => {
+      return {...state, ...action.payload}
     },
   },
 

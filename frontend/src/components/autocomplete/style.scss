@@ -1,0 +1,20 @@
+.customAutoComplete{
+    width: 100%;
+    div{
+        .select{
+            width: 100%;
+            padding: 1px 2px;
+            border-radius: 44px;
+            height: 46px;
+            
+        }
+        .helperErrorText{
+            margin-left: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 10px;
+            font-style: italic
+        }
+    }
+
+}

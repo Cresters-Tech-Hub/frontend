@@ -1,14 +1,15 @@
 import * as yup from "yup";
 
 const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{6,}$/;
+const fakeRule = /\w/
 // min 5 characters, 1 upper case letter, 1 lower case letter, 1 numeric digit.
 
 export const loginSchema = yup.object().shape({
-  email: yup.string().email("Please enter a valid email").required("Required"),
+  email: yup.string().min(3, "Please enter a valid username").max(25, "maximum of 25 characters exceeded").required("Required"),
   password: yup
     .string()
-    .min(6)
-    .matches(passwordRules, { message: "Incorrect password format, must contain at least one number, uppercase and lowercase and special character" })
+    .min(3)
+    .matches(fakeRule, { message: "Incorrect password format, must contain at least one number, uppercase and lowercase and special character" })
     .required("Required"),
 //   confirmPassword: yup
 //     .string()

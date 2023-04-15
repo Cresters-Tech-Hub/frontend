@@ -1,3 +1,5 @@
+import { nigeriaStatesAndLgas } from "../../components/states";
+
 export const formatAmount = (amount: string) =>
     amount ? amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0;
 
@@ -11,4 +13,10 @@ export const convertFirstLetterToUpperCase = (value: string) => {
 export const convertToNaira = (amount: string) => {
     const naira = "&#8358;"
     return naira + formatAmount(amount);
+};
+
+export const getLgas = (state: string) => {
+    const data = nigeriaStatesAndLgas.filter((item) => item.state === state);
+
+    return [...data.map((item) => item.lgas)];
 };

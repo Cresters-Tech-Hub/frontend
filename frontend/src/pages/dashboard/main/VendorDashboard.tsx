@@ -53,6 +53,78 @@ export default function VendorDashboard() {
             price: "3500",
             inventory: 5,
             discount: 0
+        },
+        {
+            id: 4,
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
+            description: "This is a great wear for ladies....",
+            properties: "Size : Medium",
+            price: "3500",
+            inventory: 5,
+            discount: 0
+        },
+        {
+            id: 5,
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
+            description: "This is a great wear for ladies....",
+            properties: "Size : Medium",
+            price: "3500",
+            inventory: 5,
+            discount: 0
+        },
+        {
+            id: 6,
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
+            description: "This is a great wear for ladies....",
+            properties: "Size : Medium",
+            price: "3500",
+            inventory: 5,
+            discount: 0
+        },
+        {
+            id: 7,
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
+            description: "This is a great wear for ladies....",
+            properties: "Size : Medium",
+            price: "3500",
+            inventory: 5,
+            discount: 0
+        },
+        {
+            id: 8,
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
+            description: "This is a great wear for ladies....",
+            properties: "Size : Medium",
+            price: "3500",
+            inventory: 5,
+            discount: 0
+        },
+        {
+            id: 9,
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
+            description: "This is a great wear for ladies....",
+            properties: "Size : Medium",
+            price: "3500",
+            inventory: 5,
+            discount: 0
+        },
+        {
+            id: 10,
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
+            description: "This is a great wear for ladies....",
+            properties: "Size : Medium",
+            price: "3500",
+            inventory: 5,
+            discount: 0
+        },
+        {
+            id: 11,
+            itemName: { image: `${table_img}`, details: { title: "Fit Jumpsuit", rating: 5 } },
+            description: "This is a great wear for ladies....",
+            properties: "Size : Medium",
+            price: "3500",
+            inventory: 5,
+            discount: 0
         }
     ];
 

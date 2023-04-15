@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, {useCallback } from 'react'
 import './style.scss'
 import uploadIcon from '../../assets/images/doc.png'
 import tick from '../../assets/images/tick.png'
@@ -15,7 +15,7 @@ interface IUpload {
 export default function UploadDocs({ name, subText, file, setFile }: IUpload) {
   const onDrop = useCallback((acceptedFile: any) => {
     setFile(acceptedFile[0])
-  }, [])
+  }, [setFile])
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
@@ -53,7 +53,7 @@ export default function UploadDocs({ name, subText, file, setFile }: IUpload) {
           <span>
             {file.name} -{Math.floor(Number(file.size) / 10000)}kb
           </span>
-          <img src={x} alt="" />
+          <img src={x} alt="" onClick={()=>setFile(null)}/>
         </div>
       )}
     </div>

@@ -1,0 +1,149 @@
+.view_product {
+    .top_title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .navigation_left {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+            & span:nth-of-type(1) {
+                font-family: Plus Jakarta Sans, sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #a8aeb7;
+                cursor: pointer;
+            }
+            & span:nth-of-type(2) {
+                font-family: Plus Jakarta Sans, sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #333333;
+            }
+        }
+        .navigation_right {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.3rem;
+            font-family: Plus Jakarta Sans, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #333333;
+        }
+    }
+    .product_intro {
+        margin-top: 2.5rem;
+        .title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            .left{
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                gap: 0.2rem;
+                span{
+                    font-family: Plus Jakarta Sans, sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 32px;
+                    color: #35383f;
+                }
+            }
+            .btns{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+        .product_top_action {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+            .btns {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    }
+    .product_description {
+        margin-top: 1.5rem;
+        .title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+            span{
+                font-family: Plus Jakarta Sans, sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #192252;
+            }
+        }
+        .detail {
+            font-family: Urbanist, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.01em;
+            color: #a8aeb7;
+            max-width: 732px;
+            margin-top: 1rem;
+        }
+        .amount_container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            .amount{
+                font-family: Nunito, sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 23px;
+                line-height: 32px;
+                color: #081735;
+            }
+
+        }
+    }
+    .product_amount_rating {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 1.5rem;
+        .msg {
+            font-family: Nunito, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 16px;
+            text-decoration-line: underline;
+            color: #000000;
+            cursor: pointer;
+        }
+    }
+    .product_similar_items {
+        margin-top: 4rem;
+    }
+}

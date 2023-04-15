@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store/index";
 import { PromotionAndFeatures } from "../../pages/dashboard/rightside/PromotionAndFeatures";
 import { MainDashboard } from "../../pages/dashboard/main/MainDashboard";
-import { authMenu, riderMenu, userMenu } from "../../assets/JsonData/menu";
+import { authMenu, riderMenu, userMenu, vendorMenu } from "../../assets/JsonData/menu";
 import RiderDashboard from "../../pages/dashboard/main/RiderDashboard";
 import VendorDashboard from "../../pages/dashboard/main/VendorDashboard";
 import VendorRightSidebar from "../../pages/dashboard/rightside/VendorRightSidebar";
@@ -31,9 +31,13 @@ import { rightSidebarItems } from "../../assets/JsonData/itemOptions";
 import ViewStore from "../../pages/dashboard/vendor/ViewStore";
 import viewStorePromoBg from "../../assets/images/seller_promo_img.png";
 import rightsidebarclothfeatured from "../../assets/images/rightsidebarclothfeatured.png";
-import Checkout from '../../pages/dashboard/checkout/Checkout';
-import ViewOrders from '../../pages/dashboard/user/ViewOrders';
-import ViewOrderRightSidebar from '../../pages/dashboard/rightside/ViewOrderRightSidebar';
+import Checkout from "../../pages/dashboard/checkout/Checkout";
+import ViewOrders from "../../pages/dashboard/user/ViewOrders";
+import ViewOrderRightSidebar from "../../pages/dashboard/rightside/ViewOrderRightSidebar";
+import AddProduct from "../../pages/dashboard/vendor/AddProduct";
+import EditProduct from "../../pages/dashboard/vendor/EditProduct";
+import Settings from "../../pages/dashboard/settings";
+import VendorSales from "../../pages/dashboard/vendor/VendorSales";
 
 const { home } = APPNAVIGATIONROUTES;
 
@@ -42,7 +46,7 @@ const availableRoles = ["user", "delivery agent", "vendor"];
 export const AppRoutes = () => {
     const {
         user: {
-            data: { name, role }
+            data: { name, role, username }
         },
         rightSidebarReducer: {
             data: { index, type }
@@ -81,7 +85,7 @@ export const AppRoutes = () => {
                 <Route
                     path="user"
                     element={
-                        name && role?.toLowerCase() === "user" ? (
+                        username && role?.toLowerCase() === "user" ? (
                             <WithoutAuthDashBoard
                                 rightbar={
                                     <RightSidebar
@@ -115,7 +119,7 @@ export const AppRoutes = () => {
                 <Route
                     path="view_product"
                     element={
-                        name &&
+                        username &&
                         availableRoles.includes(role?.toLowerCase() ? role?.toLowerCase() : "") ? (
                             <WithoutAuthDashBoard
                                 rightbar={<RightSidebar component={<ViewProductRightsidebar />} />}
@@ -136,9 +140,31 @@ export const AppRoutes = () => {
                     }
                 />
                 <Route
+                    path="edit_product"
+                    element={
+                        username && role?.toLowerCase() ==="vendor" ? (
+                            <WithoutAuthDashBoard
+                                rightbar={<RightSidebar component={<ViewProductRightsidebar />} />}
+                                main={
+                                    <Main
+                                        component={
+                                            <EditProduct role={role?.toLowerCase()} cost="5000" />
+                                        }
+                                        isUserDashboard={false}
+                                        showWelcome={false}
+                                    />
+                                }
+                                sidebar={<Sidebar menuData={authMenu} />}
+                            />
+                        ) : (
+                            <Navigate to="/auth/login" state="/user" replace={true} />
+                        )
+                    }
+                />
+                <Route
                     path="view_store"
                     element={
-                        name &&
+                        username &&
                         availableRoles.includes(role?.toLowerCase() ? role?.toLowerCase() : "") ? (
                             <WithoutAuthDashBoard
                                 rightbar={
@@ -173,7 +199,7 @@ export const AppRoutes = () => {
                 <Route
                     path="vendor"
                     element={
-                        name && role?.toLowerCase() === "vendor" ? (
+                        username && role?.toLowerCase() === "vendor" ? (
                             <WithoutAuthDashBoard
                                 rightbar={<RightSidebar component={<VendorRightSidebar />} />}
                                 main={
@@ -183,7 +209,26 @@ export const AppRoutes = () => {
                                         showWelcome={true}
                                     />
                                 }
-                                sidebar={<Sidebar menuData={userMenu} />}
+                                sidebar={<Sidebar menuData={vendorMenu} />}
+                            />
+                        ) : (
+                            <Navigate to="/auth/login" state="/user" replace={true} />
+                        )
+                    }
+                />
+                <Route
+                    path="sales"
+                    element={
+                        username && role?.toLowerCase() === "vendor" ? (
+                            <WithoutAuthDashBoard
+                                main={
+                                    <Main
+                                        component={<VendorSales />}
+                                        isUserDashboard={false}
+                                        showWelcome={true}
+                                    />
+                                }
+                                sidebar={<Sidebar menuData={vendorMenu} />}
                             />
                         ) : (
                             <Navigate to="/auth/login" state="/user" replace={true} />
@@ -193,7 +238,8 @@ export const AppRoutes = () => {
                 <Route
                     path="checkout"
                     element={
-                        name &&  availableRoles.includes(role?.toLowerCase() ? role?.toLowerCase() : "")  ? (
+                        username &&
+                        availableRoles.includes(role?.toLowerCase() ? role?.toLowerCase() : "") ? (
                             <WithoutAuthDashBoard
                                 main={
                                     <Main
@@ -210,9 +256,28 @@ export const AppRoutes = () => {
                     }
                 />
                 <Route
+                    path="add_product"
+                    element={
+                        username && role?.toLowerCase() === "vendor" ? (
+                            <WithoutAuthDashBoard
+                                main={
+                                    <Main
+                                        component={<AddProduct />}
+                                        isUserDashboard={false}
+                                        showWelcome={false}
+                                    />
+                                }
+                                sidebar={<Sidebar menuData={authMenu} />}
+                            />
+                        ) : (
+                            <Navigate to="/auth/login" state="/user" replace={true} />
+                        )
+                    }
+                />
+                <Route
                     path="rider"
                     element={
-                        name && role?.toLowerCase() === "delivery agent" ? (
+                        username && role?.toLowerCase() === "delivery agent" ? (
                             <WithoutAuthDashBoard
                                 rightbar={<RightSidebar component={<RiderRightsidebar />} />}
                                 main={
@@ -232,9 +297,21 @@ export const AppRoutes = () => {
                 <Route
                     path="accepted_ride"
                     element={
-                        name && role?.toLowerCase() === "delivery agent" ? (
+                        username && role?.toLowerCase() === "delivery agent" ? (
                             <WithoutAuthDashBoard
-                                rightbar={<RightSidebar component={<AcceptRideRightSidebar title="Receiver Information" paymentMode="Online Payment" role="User" paid userName="Adegoke Fola"/>} />}
+                                rightbar={
+                                    <RightSidebar
+                                        component={
+                                            <AcceptRideRightSidebar
+                                                title="Receiver Information"
+                                                paymentMode="Online Payment"
+                                                role="User"
+                                                paid
+                                                userName="Adegoke Fola"
+                                            />
+                                        }
+                                    />
+                                }
                                 main={<Main component={<AcceptedRide />} isUserDashboard={false} />}
                                 sidebar={<Sidebar menuData={riderMenu} />}
                             />
@@ -246,10 +323,43 @@ export const AppRoutes = () => {
                 <Route
                     path="View_orders"
                     element={
-                        name && availableRoles.includes(role?.toLowerCase() ? role?.toLowerCase() : "") ? (
+                        username &&
+                        availableRoles.includes(role?.toLowerCase() ? role?.toLowerCase() : "") ? (
                             <WithoutAuthDashBoard
-                                rightbar={<RightSidebar component={<AcceptRideRightSidebar title="Rider Information" paymentMode="Online Payment" role="Rider" paid userName="Martins Adetola"/>} />}
+                                rightbar={
+                                    <RightSidebar
+                                        component={
+                                            <AcceptRideRightSidebar
+                                                title="Rider Information"
+                                                paymentMode="Online Payment"
+                                                role="Rider"
+                                                paid
+                                                userName="Martins Adetola"
+                                            />
+                                        }
+                                    />
+                                }
                                 main={<Main component={<ViewOrders />} isUserDashboard={false} />}
+                                sidebar={<Sidebar menuData={authMenu} />}
+                            />
+                        ) : (
+                            <Navigate to="/auth/login" state="/user" replace={true} />
+                        )
+                    }
+                />
+                 <Route
+                    path="settings"
+                    element={
+                        username &&
+                        availableRoles.includes(role?.toLowerCase() ? role?.toLowerCase() : "") ? (
+                            <WithoutAuthDashBoard
+                                main={
+                                    <Main
+                                        component={<Settings />}
+                                        isUserDashboard={false}
+                                        showWelcome={false}
+                                    />
+                                }
                                 sidebar={<Sidebar menuData={authMenu} />}
                             />
                         ) : (
@@ -259,7 +369,17 @@ export const AppRoutes = () => {
                 />
                 <Route path="splashscreen" element={<SplashScreen />} />
                 <Route path="successfulreg" element={<SuccessReg />} />
-                <Route path="profile" element={<Profile />} />
+                <Route
+                    path="profile"
+                    element={
+                        username &&
+                        availableRoles.includes(role?.toLowerCase() ? role?.toLowerCase() : "") ? (
+                            <Profile />
+                        ) : (
+                            <Navigate to="/auth/login" state="/user" replace={true} />
+                        )
+                    }
+                />
 
                 <Route path="auth" element={<CreateAccount />}>
                     <Route index element={<AccountType />} />

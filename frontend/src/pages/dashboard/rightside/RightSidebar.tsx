@@ -17,13 +17,13 @@ const RightSidebar = ({ component }: IRightSidebar) => {
     const navigate = useNavigate();
     const {
         user: {
-            data: { name, role }
+            data: { name, role, username }
         },
         cartSlice:{count}
     } = useSelector((state: RootState) => state);
     return (
         <div className="rightSidebar">
-            {!name ? (
+            {!username ? (
                 <div className="rightsidebar_auth">
                     <button onClick={() => navigate("/auth")} className="create_btn">
                         Create Account
@@ -46,13 +46,13 @@ const RightSidebar = ({ component }: IRightSidebar) => {
                         </Badge>
                     </div>
                     <div>
-                        <Avatar>{name.slice(0, 2).toUpperCase()}</Avatar>
+                        <Avatar>{username.slice(0, 2).toUpperCase()}</Avatar>
                     </div>
                     <div className="user_details_right">
-                        <div>{name}</div>
+                        <div>{username}</div>
                         <div className="role">{role}</div>
                     </div>
-                    <div>
+                    <div style={{cursor:"pointer"}}>
                         <BiCaretDownCircle color="rgba(92, 92, 92, 1)" fontSize="24px" />
                     </div>
                 </div>

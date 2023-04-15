@@ -5,6 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { nigeriaStatesAndLgas } from "./../../states/index";
 import CustomCheckBox from "../../checkbox/CustomCheckBox";
 import Button from "../../buttons";
+import { getLgas } from "../../../utils/helper";
 
 interface Props {
     open: boolean;
@@ -45,11 +46,6 @@ const AddAddressModal = ({
     state,
     addToAddress
 }: Props) => {
-    const getLgas = (useState: string) => {
-        const data = nigeriaStatesAndLgas.filter((item) => item.state === useState);
-
-        return [...data.map((item) => item.lgas)];
-    };
 
     const verifyInput=()=>{
         if(!isNaN(Number(houseNumber)) && streetAddress.trim().length > 7 && !isNaN(Number(contact)) && contact.length === 11 ) return true;

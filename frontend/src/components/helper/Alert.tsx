@@ -1,7 +1,7 @@
 import { Alert, AlertColor, Stack } from '@mui/material';
 import React from 'react';
 
-interface AlertBooxProps{
+interface AlertBoxProps{
     text:string
     type:AlertColor | undefined
 }
@@ -14,7 +14,7 @@ const style = {
     height: "83px",
 }
 
-export default function AlertBox({text, type}:AlertBooxProps) {
+export default function AlertBox({text, type}:AlertBoxProps) {
   return (
     <Stack sx={{ width:{xs: '303', sm:'523px' }, textAlign:{xs:'left'}}} >
     <Alert severity={type || "info"} sx={{style}}>{text}</Alert>

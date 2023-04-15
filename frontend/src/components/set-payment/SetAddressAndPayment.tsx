@@ -8,6 +8,7 @@ import Button from "../buttons";
 import AddAddressModal from "../modals/addressmodal/AddAddressModal";
 import { toast } from 'react-toastify'
 import RegModal from "../modals/regmodal";
+import AddNewItemBtn from "../add_new_item_btn";
 
 const SetAddressAndPayment = () => {
     const [houseNumber, setHouseNumber] = useState("");
@@ -144,13 +145,7 @@ const SetAddressAndPayment = () => {
                         <div className="phone">{details.mobile}</div>
                     </div>
                 ))}
-                <div className="addNewAddress">
-                    <div></div>
-                    <div onClick={openAddressModalFunc}>
-                        <AiOutlinePlus color="#06c149" />
-                        <span>Add New Address</span>
-                    </div>
-                </div>
+                <AddNewItemBtn onClick={openAddressModalFunc} title="Add Additional property" width="45%"/>
             </div>
             <div className="payment_method_container">
                 <div className="payment_method_item">

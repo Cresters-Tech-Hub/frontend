@@ -20,6 +20,18 @@ import rightsidebarclothpromo from "../../assets/images/rightsidebarclothpromo.p
 import rightsidebarclothfeatured from "../../assets/images/rightsidebarclothfeatured.png";
 
 export const dashboardOptions = ["food", "fashion", "furniture", "automobile", "electronics"];
+export const variants = ["small", "medium", "large", "Extra Large"];
+export const tagsData = ["Boots", "Sneakers", "Clothes", "Footwaer"];
+export const vehicleType = ["Trailer", "Van", "Motocylce", "Tricycle", "Car"];
+export const vehicleColor = ["blue", "black", "white", "gray", "red"];
+export const packageSize = ["Less than 5kg", "Less than 10kg", "Less than 15kg", "Less than 25kg"];
+export const ColorData = ["red", "blue", "green"];
+export const emailNotiPreference = ["Send me personalised Email Notifications on stores update", "Send me personalised Email Notifications on new sales", 
+"Send me personalised Email Notifications on order payment", "Send me personalised Email Notifications on order progress"];
+export const userEmailNotiPreference = ["Send me personalised Email Notifications on new promotional offers", 
+"Send me personalised Email Notifications on stores update", "Send me personalised Email Notifications on order progress"];
+export const vendorEmailNotiPreference = ["Send me personalised Email Notifications on incoming ride offers", 
+"Send me personalised Email Notifications on new sales", "Send me personalised Email Notifications on payment", "Send me personalised Email Notifications on order progress"];
 
 export const food = [
     {

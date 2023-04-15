@@ -23,7 +23,7 @@ const ViewProduct = ({ role, instock, cost, rating }: Props) => {
         <div className="view_product">
             <div className="top_title">
                 <div className="navigation_left" onClick={() => navigate(`/${role}`)}>
-                    <span>Back to Dashboard//</span>
+                    <span>Back to Dashboard/</span>
                     <span>View Product</span>
                 </div>
                 <div className="navigation_right">

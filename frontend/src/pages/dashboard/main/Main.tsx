@@ -17,7 +17,7 @@ interface IMain {
 
 const Main = ({ component, isUserDashboard, showWelcome }: IMain) => {
     const {
-        data: { name, location, path }
+        data: { name, location, username }
     } = useSelector((state: RootState) => state.user);
     const [status, setMobileStatus] = useState(false);
     const dispatch = useDispatch();
@@ -45,7 +45,7 @@ const Main = ({ component, isUserDashboard, showWelcome }: IMain) => {
                 className="dashboard_topbar"
             />
             <div className="dashboard_body">
-              {!!showWelcome && <div className="title">Welcome {name && name}😊</div>}
+              {!!showWelcome && <div className="title">Welcome {username && username}😊</div>}
                 {isUserDashboard && (
                     <div className="subtitle">
                         Manage your store items, orders and so much more...

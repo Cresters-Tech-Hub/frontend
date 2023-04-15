@@ -1,0 +1,41 @@
+.settings_preference {
+    .preference_title {
+        font-family: Nunito, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #424242;
+    }
+    .email_settings {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 50%;
+        .eamil_option {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+            span {
+                font-family: Nunito, sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: 0.01em;
+                color: #424242;
+                width: 75%;
+            }
+        }
+    }
+    .preference_btn{
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./sidebar.scss";
 import Logo from "../../../components/logo/index";
-import { menu, downMenu, authMenu, authDownMenu } from "../../../assets/JsonData/menu";
+import { menu, downMenu, authMenu, authDownMenu, settingsData, riderMenu, vendorMenu } from "../../../assets/JsonData/menu";
 import settings from "../../../assets/images/settings.png";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -27,7 +27,7 @@ const Sidebar = ({ menuData }: ISidebar) => {
     const mobileMenuStatus = useSelector((state: RootState) => state.mobileMenuStatus.status);
     const data = useSelector((state: RootState) => state.user.data);
     const {
-        data: { name, path }
+        data: { name, path, username }
     } = useSelector((state: RootState) => state.user);
     const [index, setIndex] = useState<number | undefined>(1);
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -36,6 +36,12 @@ const Sidebar = ({ menuData }: ISidebar) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
+        setAnchorEl(null);
+    };
+    const handleMenuClick= (url:string) => {
+        if(url === "View Profile") navigate(`/${path}`);
+        if(url === "KYC")  navigate(`/profile`);
+       
         setAnchorEl(null);
     };
     const logout = () => {
@@ -47,12 +53,22 @@ const Sidebar = ({ menuData }: ISidebar) => {
     const sidebarAction = (id: number, itemName: string) => {
         setIndex(id);
 
-        if (itemName === "Profile") navigate(`/${path}`);
+        if (itemName === "My Orders") navigate("/View_orders");
+        if (itemName === "Sales") navigate("/sales");
+        if (itemName === "Ride History") navigate("/accepted_ride");
         if (itemName === "Dashboard") navigate("/dashboard");
+        if (itemName === "Settings") navigate("/settings");
+        if (itemName === "Explore") navigate("/dashboard");
     };
 
-    const sidebarMenuTop = name ? menuData : menu;
-    const sidebarMenuDown = name ? authDownMenu : downMenu;
+    let sidebarMenuTop;
+    let pathToLowerCase = path?.toLowerCase() 
+    if(pathToLowerCase === "user") sidebarMenuTop = menuData;
+    else if(pathToLowerCase === "rider") sidebarMenuTop = riderMenu;
+   else if(pathToLowerCase === "vendor") sidebarMenuTop = vendorMenu;
+   else sidebarMenuTop = menu;
+
+    const sidebarMenuDown = username ? authDownMenu : downMenu;
     return (
         <div className="dashboard_sidebar">
             <div className="logo">Cresters</div>
@@ -78,7 +94,7 @@ const Sidebar = ({ menuData }: ISidebar) => {
                         onClick={() => sidebarAction(item.id, item.name)}
                     >
                         <span className="sidebar_icon_bg">{item.icon}</span>
-                        {item.name === "Settings" ? (
+                        {item.name === "Profile" ? (
                             <>
                                 <span
                                     aria-controls={open ? "basic-menu" : undefined}
@@ -109,9 +125,9 @@ const Sidebar = ({ menuData }: ISidebar) => {
                         "aria-labelledby": "basic-button"
                     }}
                 >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>Preferences</MenuItem>
-                    <MenuItem onClick={handleClose}>Account</MenuItem>
+                    {
+                        settingsData.map((item, id)=>(<MenuItem key={id} onClick={()=>handleMenuClick(item)}>{item}</MenuItem>))
+                    }
                 </Menu>
             </div>
             {width < 821 && mobileMenuStatus && !name ? (

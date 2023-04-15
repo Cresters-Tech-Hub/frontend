@@ -16,6 +16,7 @@ interface IToggleSwitch{
     optionLabels?:string
     small?:boolean
     disabled?:boolean
+    style?:React.CSSProperties
 }
 
 const ToggleSwitch = ({
@@ -25,7 +26,8 @@ const ToggleSwitch = ({
   onChange,
   optionLabels,
   small,
-  disabled
+  disabled,
+  style
 }:IToggleSwitch) => {
   function handleKeyPress(e:React.KeyboardEvent<HTMLLabelElement>) {
     if (e.keyCode !== 32) return;
@@ -35,7 +37,7 @@ const ToggleSwitch = ({
   }
 
   return (
-    <div className={"toggle-switch" + (small ? " small-switch" : "")}>
+    <div className={"toggle-switch" + (small ? " small-switch" : "")} style={{...style}}>
       <input
         type="checkbox"
         name={name}

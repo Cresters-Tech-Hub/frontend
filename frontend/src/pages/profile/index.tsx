@@ -3,6 +3,9 @@ import './style.scss'
 import { toast } from 'react-toastify'
 import ProfileSidebar from '../../components/sidebar/profile/Sidebar'
 import Main from './main/Main'
+import Sidebar from '../dashboard/sidebar/Sidebar'
+import { authMenu } from '../../assets/JsonData/menu'
+import { useWindowSize } from '../../hooks'
 
 
 export default function Profile() {
@@ -21,6 +24,7 @@ export default function Profile() {
     },
     // and so on ...
   }
+  const width = useWindowSize();
   const notify = () => toast('Email Verification succesful!', options)
 
   useEffect(() => {
@@ -32,7 +36,7 @@ export default function Profile() {
       Cresters
       </div>
       <div className="container">
-      <ProfileSidebar/>
+        {width > 768 && <Sidebar menuData={authMenu} />}
       <Main/>
       </div>
     </div>

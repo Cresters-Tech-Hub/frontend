@@ -8,6 +8,7 @@ export interface IUser {
         location: string | null;
         role: string | null;
         path:string | null;
+        username?:string | null
     };
 }
 let local = localStorage.getItem("user");
@@ -19,7 +20,8 @@ const initialState: IUser = {
         firstName: user?.lastName,
         location: user?.location,
         role: user?.role,
-        path:user?.path
+        path:user?.path,
+        username: user?.username
     }
 };
 

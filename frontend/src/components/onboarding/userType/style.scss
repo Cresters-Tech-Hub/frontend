@@ -5,6 +5,18 @@
     position: relative;
     align-items: center;
     margin-bottom: 10px;
+    .add_address_input{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 1rem;
+        width: 100%;
+        select{
+            width: 50%;
+            padding: 10px;
+            border-radius: 12px;
+        }
+    }
     
     input{
         width: 100%;
@@ -53,5 +65,17 @@
     letter-spacing: 0.01em;
     /* Grey 600 */
     color: #616161;
+    }
+}
+
+@media (max-width:700px){
+    .userType_username {
+        .add_address_input{
+            flex-direction: column;
+            gap: 0.5remrem;
+            select{
+                width: 100%;
+            }
+        }
     }
 }
