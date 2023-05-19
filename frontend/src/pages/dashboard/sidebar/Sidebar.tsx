@@ -27,7 +27,7 @@ const Sidebar = ({ menuData }: ISidebar) => {
     const mobileMenuStatus = useSelector((state: RootState) => state.mobileMenuStatus.status);
     const data = useSelector((state: RootState) => state.user.data);
     const {
-        data: { name, path, username }
+        data: { role, path, username }
     } = useSelector((state: RootState) => state.user);
     const [index, setIndex] = useState<number | undefined>(1);
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -130,7 +130,7 @@ const Sidebar = ({ menuData }: ISidebar) => {
                     }
                 </Menu>
             </div>
-            {width < 821 && mobileMenuStatus && !name ? (
+            {width < 821 && mobileMenuStatus && !role ? (
                 <div className="mobileLogin">
                     <Button
                         onClick={() => navigate("/auth")}

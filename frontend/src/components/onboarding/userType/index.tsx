@@ -24,6 +24,22 @@ import CustomSelect, { OptionsProps } from "../../helper/CustomSelect";
 import { nigeriaStatesAndLgas } from "../../states";
 import { getLgas } from '../../../utils/helper/index';
 import { toast } from "react-toastify";
+import { makeStyles } from '@mui/styles';
+
+
+
+const useStyles = makeStyles({
+  root: {
+    backgroundColor: '#06c149',
+  },
+  colorPrimary:{
+    color:'#06c149'
+  },
+  checked:{
+    color:'#06c149',
+  }
+});
+
 
 
 
@@ -40,6 +56,8 @@ interface Ivalue {
 }
 
 export default function UserTypeRegistration({ userType, isLoginPage }: UserTypeRegistrationProp) {
+
+      const classes = useStyles();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -144,7 +162,7 @@ export default function UserTypeRegistration({ userType, isLoginPage }: UserType
                  firstName: data?.first_name,
                  location: data?.user_location,
                  role: data?.roles[0],
-                 path:data?.user_path,
+                 path:data?.roles[0].toLowerCase() as string,
                  username: data?.user_name
              })
          );
@@ -367,6 +385,7 @@ export default function UserTypeRegistration({ userType, isLoginPage }: UserType
                     </div>
                     <div className="userType_username_checkbox">
                         <Checkbox
+                         className={classes.checked}
                             onClick={handleCheckbox}
                             size="medium"
                             color="success"
@@ -439,6 +458,20 @@ export default function UserTypeRegistration({ userType, isLoginPage }: UserType
                         {registerErrors.email && registerTouched.email && registerErrors.email}
                     </div>
                     <div className="userType_username">
+                     <div className="add_address_input">
+                                <select placeholder="State" value={state} onChange={(e)=>setState(e.target.value)}>
+                                    {nigeriaStatesAndLgas.map(({ state }, i) => (
+                                        <option key={i}>{state}</option>
+                                    ))}
+                                </select>
+                                <select placeholder="City" value={city} onChange={(e)=>setCity(e.target.value)}>
+                                    {getLgas(state).map((lgas, i) => {
+                                        return lgas.map((lg, id) => <option key={id}>{lg}</option>);
+                                    })}
+                                </select>
+                            </div>
+                    </div>
+                    <div className="userType_username">
                         <img src={passwordImg} alt="" className="start" />
                         <input
                             type={hidePassword ? "text" : "password"}
@@ -468,6 +501,7 @@ export default function UserTypeRegistration({ userType, isLoginPage }: UserType
                     </div>
                     <div className="userType_username_checkbox">
                         <Checkbox
+                         className={classes.checked}
                             onClick={handleCheckbox}
                             size="medium"
                             color="success"
@@ -540,6 +574,20 @@ export default function UserTypeRegistration({ userType, isLoginPage }: UserType
                         {registerErrors.email && registerTouched.email && registerErrors.email}
                     </div>
                     <div className="userType_username">
+                     <div className="add_address_input">
+                                <select placeholder="State" value={state} onChange={(e)=>setState(e.target.value)}>
+                                    {nigeriaStatesAndLgas.map(({ state }, i) => (
+                                        <option key={i}>{state}</option>
+                                    ))}
+                                </select>
+                                <select placeholder="City" value={city} onChange={(e)=>setCity(e.target.value)}>
+                                    {getLgas(state).map((lgas, i) => {
+                                        return lgas.map((lg, id) => <option key={id}>{lg}</option>);
+                                    })}
+                                </select>
+                            </div>
+                    </div>
+                    <div className="userType_username">
                         <img src={passwordImg} alt="" className="start" />
                         <input
                             type={hidePassword ? "text" : "password"}
@@ -569,6 +617,7 @@ export default function UserTypeRegistration({ userType, isLoginPage }: UserType
                     </div>
                     <div className="userType_username_checkbox">
                         <Checkbox
+                        className={classes.checked}
                             onClick={handleCheckbox}
                             size="medium"
                             color="success"
