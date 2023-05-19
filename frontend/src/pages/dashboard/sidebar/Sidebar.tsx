@@ -71,7 +71,7 @@ const Sidebar = ({ menuData }: ISidebar) => {
     const sidebarMenuDown = username ? authDownMenu : downMenu;
     return (
         <div className="dashboard_sidebar">
-            <div className="logo">Cresters</div>
+            <div className="logo">Justbuy</div>
             <div className="top">
                 <div className="title">MENU</div>
                 {sidebarMenuTop &&

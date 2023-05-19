@@ -17,7 +17,6 @@ const LandingPage = () => {
     <div className='landing_page'>
       <div className="landing_items_center">
       <img src={crester_logo} alt="" />
-      <div className="crester_logo">Cresters</div>
       </div>
       <Spinner imageUri={spinner}/>
     </div>

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import jwt from 'jwt-decode' // import dependency
-import { useDispatch } from 'react-redux';
-import { setUserData } from '../../reducer/userReducer';
+
 
 const BASE_URL = "https://backup-api.herokuapp.com/api/core/v1/"
 
